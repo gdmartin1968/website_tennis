@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+header {
+    background-color: #004080;
+    color: #fff;
+    padding: 20px 10%;
+    text-align: center;
+}
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+nav {
+    margin-top: 10px;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+.hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+.hero-content {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 10%;
+}
+.hero-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+.hero-content a {
+    background-color: #ffa500;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.1em;
+    border-radius: 5px;
+}
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 10%;
+    background-color: #fff;
+    flex-wrap: wrap;
+}
+.feature {
+    text-align: center;
+    width: 30%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    margin: 15px;
+}
+.feature img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 10px;
+}
+.feature h3 {
+    font-size: 1.5em;
+}
+.feature p {
+    margin: 10px 0;
+}
+.feature a {
+    display: inline-block;
+    margin: 5px 0;
+    padding: 10px 15px;
+    background-color: #004080;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.feature a:hover {
+    background-color: #ffa500;
+}
+.cta-section {
+    text-align: center;
+    padding: 40px 10%;
+}
+.cta-section form {
+    display: inline-block;
+    margin-top: 20px;
+}
+.cta-section input[type="email"] {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.cta-section button {
+    background-color: #004080;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.cta-section button:hover {
+    background-color: #ffa500;
+}
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
