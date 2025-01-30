@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "build" }
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/martintennisacademy.com",
+      "destination": "https://martintennisacademy.com",
+      "statusCode": 301
+    },
+    {
+      "source": "/www.martintennisacademy.com",
+      "destination": "https://www.martintennisacademy.com",
+      "statusCode": 301
+    }
+  ]
+}
+

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="images/mta-logo.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>High Performance Tennis Training - Martin Tennis Academy</title>
+    <style>
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 20px 10%;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        .hero {
+            background: url('./images/elite-tennis-player.png') no-repeat center center/cover;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .glass-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background: rgba(199, 8, 8, 0.8); /* Increased opacity for more solid color */
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background: rgba(199, 8, 8, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            backdrop-filter: blur(10px);
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .glass-button:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+        }
+        main {
+            padding: 20px 10%;
+        }
+        h2 {
+            color: #ff008c;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        article {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        article h3 {
+            margin-top: 0;
+            color: #ffa500;
+        }
+        article p {
+            line-height: 1.6;
+        }
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            margin: 20px 0;
+        }
+
+        table caption {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+            color: #333;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #d3d3d3;
+        }
+
+        table tr:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+
+        table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        table td:last-child {
+            color: #555;
+            font-style: italic;
+        }
+
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .image-gallery img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Martin Tennis Academy</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services & Pricing</a>
+            <a href="#schedule" style="background-color: #ff008c; padding: 5px 10px; border-radius: 5px;">Schedule Lessons</a>
+            <a href="vlog.html">Vlog</a>
+            <a href="testimonials.html">Testimonials</a>
+            <a href="#login" style="background-color: #ffa500; padding: 5px 10px; border-radius: 5px;">PARENT/PLAYER LOGIN</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <main>
+    <section class="hero" style="height: 80vh;"></section>
+        <h2>High Performance Tennis Training</h2>
+        <p style="text-align: center; font-weight: bold;">Join our elite training program and take your game to the next level!</p>
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="book-now.html" class="glass-button">Book Now</a>
+            <a href="contact.html" class="glass-button">Contact Us</a>
+        </div>
+    </section>
+    </main>
+    <footer class="footer">
+        <p><strong>&copy; 2025 Martin Tennis Academy. All rights reserved.</strong></p>
+        <br>
+        <p><strong>Follow Us on Social Media:</strong></p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61569052616812" target="_blank"><img src="C:/website_tennis/images/navigation/facebook.png" alt="Facebook" style="width: 48px; height: 48px;"></a>
+            <a href="#" target="_blank"><img src="C:/website_tennis/images/navigation/instagram.jpeg" alt="Instagram" style="width: 48px; height: 48px;"></a>
+            <a href="#" target="_blank"><img src="C:/website_tennis/images/navigation/youtube.jpeg" alt="YouTube" style="width: 48px; height: 48px;"></a>
+            <a href="#" target="_blank"><img src="C:/website_tennis/images/navigation/tiktok.jpeg" alt="TikTok" style="width: 48px; height: 48px;"></a>
+        </div>
+    </footer>
+</body>
+</html>
