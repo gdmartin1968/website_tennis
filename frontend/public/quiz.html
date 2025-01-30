@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennis and Pickleball Survey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .survey-section {
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .survey-section h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .survey-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="radio"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-group button:hover {
+            background-color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Martin Tennis Academy</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="#schedule" style="background-color: #ff008c; padding: 5px 10px; border-radius: 5px;">Schedule Lessons</a>
+            <a href="vlog.html">Vlog</a>
+            <a href="testimonials.html">Testimonials</a>
+            <a href="#login" style="background-color: #ffa500; padding: 5px 10px; border-radius: 5px;">PARENT/PLAYER LOGIN</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="survey" class="survey-section">
+            <h2>Tell Us About You</h2>
+            <form action="/submit-survey" method="POST" class="survey-form">
+                <div style="margin: 20px 0;">
+                    <label for="sport-interest" style="font-weight: bold;">I'm interested in:</label>
+                    <select id="sport-interest" name="sport-interest" style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                        <option value="" disabled selected>Select an option...</option>
+                        <option value="tennis">Tennis only</option>
+                        <option value="pickleball">Pickleball only</option>
+                        <option value="both">Tennis & Pickleball</option>
+                        <option value="unsure">Not sure which sport I’d like to learn/master</option>
+                        <option value="other">Other [Please specify in the box below]</option>
+                    </select>
+                    <textarea id="other-sport" name="other-sport" placeholder="Please specify in the box below if you chose 'Other'" style="width: 100%; margin-top: 10px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; display: none;"></textarea>
+                    </textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="currently-i">Currently I:</label>
+                    <select id="currently-i" name="currently-i" style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                        <option value="" disabled selected>Select an option...</option>
+                        <option value="cant-control-shots">Can't control my shots enough</option>
+                        <option value="no-stamina">Don't have the stamina to get through a longer, tough match</option>
+                        <option value="not-consistent">Just don't play enough to be consistent</option>
+                        <option value="low-power">Cannot generate enough power on my shots</option>
+                        <option value="lose-matches">Feel like I have the ability to play well, but end up losing matches that I feel I should win</option>
+                        <option value="improve-footwork">Feel great about my game, I just need to improve my footwork</option>
+                        <option value="other">Other [Please specify in the box below]</option>
+                    </select>
+                    <textarea id="currently-i-other" name="currently-i-other" placeholder="Please specify here if you chose 'Other'" style="width: 100%; margin-top: 10px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; display: none;"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="make">Make me:</label>
+                    <select id="make" name="make" style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                        <option value="" disabled selected>Select an option...</option>
+                        <option value="better">better</option>
+                        <option value="stronger">stronger</option>
+                        <option value="faster">faster</option>
+                        <option value="more skilled">more skilled</option>
+                        <option value="mentally tougher">mentally tougher</option>
+                        <option value="smarter on the court">smarter on the court</option>
+                        <option value="more patient">more patient</option>
+                        <option value="more confident">more confident</option>
+                        <option value="a problem solver">a problem solver</option>
+                        <option value="more strategic">more strategic</option>
+                        <option value="other">Other [Please specify in the box below]</option>
+                    </select>
+                    <textarea id="make-other" name="make-other" placeholder="Please specify here if you chose 'Other'" style="width: 100%; margin-top: 10px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; display: none;"></textarea>
+                </div>
+
+                <div class="form-group"></div>
+                    <label for="help" style="font-weight: bold;">Help me:</label>
+                    <select id="help" name="help" style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                        <option value="" disabled selected>Select an option...</option>
+                        <option value="improve my serve">improve my serve</option>
+                        <option value="improve my backhand">improve my backhand</option>
+                        <option value="improve my footwork">improve my footwork</option>
+                        <option value="improve my strategy">improve my strategy</option>
+                        <option value="other">Other [Please specify in the box below]</option>
+                    </select>
+                    <textarea id="help-other" name="help-other" placeholder="Please specify here if you chose 'Other'" style="width: 100%; margin-top: 10px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; display: none;"></textarea>
+                </div>
+
+                <div class="form-group"></div>
+                    <label for="willing-to" style="font-weight: bold;">I'm willing to [do anything or everything are not thoughtful enough answers]:</label>
+                    <select id="willing-to" name="willing-to" style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                        <option value="" disabled selected>Select an option...</option>
+                        <option value="practice-daily">Practice daily</option>
+                        <option value="private-lessons">Take private lessons</option>
+                        <option value="group-class">Join a group class</option>
+                        <option value="tournaments">Participate in tournaments</option>
+                        <option value="modify-diet">Modify my diet when necessary</option>
+                        <option value="hiit-training">Do HIIT Training when necessary</option>
+                        <option value="other">Other [Please specify in the box below]</option>
+                    </select>
+                    <textarea id="willing-to-other" name="willing-to-other" placeholder="Please specify here if you chose 'Other'" style="width: 100%; margin-top: 10px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; display: none;"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <br>
+                    <label for="biggest-hurdle">My biggest hurdle is:</label>
+                    <select id="biggest-hurdle" name="biggest-hurdle" style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                        <option value="" disabled selected>Select an option...</option>
+                        <option value="conditioning">My conditioning</option>
+                        <option value="mental-toughness">Lack of mental toughness</option>
+                        <option value="form">My form</option>
+                        <option value="serve">My serve</option>
+                        <option value="lack-of-time">Lack of time</option>
+                        <option value="lack-of-confidence">Lack of confidence</option>
+                        <option value="lack-of-experience">Lack of experience</option>
+                        <option value="other">Other [Please specify in the box below]</option>
+                    </select>
+                    <textarea id="biggest-hurdle-other" name="biggest-hurdle-other" placeholder="Please specify here if you chose 'Other'" style="width: 100%; margin-top: 10px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; display: none;"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="strongest">My strongest trait is:</label>
+                    <select id="strongest" name="strongest" style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                        <option value="" disabled selected>Select an option...</option>
+                        <option value="determination">determination</option>
+                        <option value="focus">focus</option>
+                        <option value="endurance">endurance</option>
+                        <option value="agility">agility</option>
+                        <option value="other">Other [Please specify in the box below]</option>
+                    </select>
+                    <textarea id="strongest-other" name="strongest-other" placeholder="Please specify here if you chose 'Other'" style="width: 100%; margin-top: 10px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; display: none;"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="strengths">My other strengths are:</label>
+                    <input type="text" id="strengths" name="strengths" style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                </div>
+
+                <div class="form-group">
+                    <button type="submit">Submit Survey</button>
+                </div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Martin Tennis Academy. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="images/mta-logo.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services & Pricing - Martin Tennis Academy</title>
+    <style>
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 20px 10%;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        main {
+            padding: 20px 10%;
+        }
+        h2 {
+            color: #ff008c;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        article {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        article h3 {
+            margin-top: 0;
+            color: #ffa500;
+        }
+        article p {
+            line-height: 1.6;
+        }
+        footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            margin: 20px 0;
+        }
+
+        table caption {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+            color: #333;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #d3d3d3;
+        }
+
+        table tr:nth-child(odd) {
+            background-color: #f9f9f9;
+        }
+
+        table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        table td:last-child {
+            color: #555;
+            font-style: italic;
+        }
+
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .image-gallery img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Martin Tennis Academy</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services & Pricing</a>
+            <a href="schedule.html" style="background-color: #ff008c; padding: 5px 10px; border-radius: 5px;">Schedule Lessons</a>
+            <a href="vlog.html">Vlog</a>
+            <a href="testimonials.html">Testimonials</a>
+            <a href="login.html" style="background-color: #ffa500; padding: 5px 10px; border-radius: 5px;">PARENT/PLAYER LOGIN</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Our Services & Pricing</h2>
+        <p style="font-size: 20px; font-weight: bold; margin-bottom: 10px; text-align: center;">
+            Individual Lessons & Packages - Click on any image below to 
+            <a href="book-now.html" style="color: #7700ff;">Book Now!</a>
+        </p>
+        <div class="image-gallery">
+            <img src="images/pricing/0-first-two-lessons-free.png" alt="Individual Lessons - First Two Free">
+            <img src="images/pricing/60-individual-lesson.png" alt="Individual Lessons">
+            <img src="images/pricing/180-5-lessons.png" alt="Package of 5 Lessons">
+            <img src="images/pricing/300-5-week-10-lessons.png" alt="Package of 10 Lessons, twice per week">
+            <img src="images/pricing/15-racket-restringing-byo-strings.png" alt="Racket Restringing - You Supply Your Own Strings">
+            <img src="images/pricing/35-racket-restringing-and-strings.png" alt="Racket Restringing and Strings">
+            <img src="images/pricing/8-ball-machine-rental-30-minutes.png" alt="Ball machine Rental – 30 minutes">
+            <img src="images/pricing/12-ball-machine-rental-1-hour.png" alt="Ball machine Rental – One Hour">
+        </div>
+
+        <table>
+            <caption>Group Lessons - Tennis or Pickleball</caption>
+            <thead>
+                <tr>
+                    <th>Number of Players</th>
+                    <th>Duration</th>
+                    <th>Price Per Individual</th>
+                    <th>Additional Info</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2 players</td>
+                    <td>50 mins</td>
+                    <td>$25 each</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>3 players</td>
+                    <td>50 mins</td>
+                    <td>$18 each</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>4 players</td>
+                    <td>50 mins</td>
+                    <td>$15 each</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>5-8 players</td>
+                    <td>60-80 mins</td>
+                    <td>$12 each</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>9+ players</td>
+                    <td>60-80 mins</td>
+                    <td>TBD (max $10 per person)</td>
+                    <td>One instructor for up to 8 participants</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        
+    </main>
+    <footer class="footer">
+        <p><strong>&copy; 2025 Martin Tennis Academy. All rights reserved.</strong></p>
+        <br>
+        <p><strong>Follow Us on Social Media:</strong></p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61569052616812" target="_blank"><img src="C:/website_tennis/images/navigation/facebook.png" alt="Facebook" style="width: 48px; height: 48px;"></a>
+            <a href="#" target="_blank"><img src="C:/website_tennis/images/navigation/instagram.jpeg" alt="Instagram" style="width: 48px; height: 48px;"></a>
+            <a href="#" target="_blank"><img src="C:/website_tennis/images/navigation/youtube.jpeg" alt="YouTube" style="width: 48px; height: 48px;"></a>
+            <a href="#" target="_blank"><img src="C:/website_tennis/images/navigation/tiktok.jpeg" alt="TikTok" style="width: 48px; height: 48px;"></a>
+        </div>
+    </footer>
+</body>
+</html>
