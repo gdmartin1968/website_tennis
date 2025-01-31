@@ -117,68 +117,91 @@
         </nav>
     </header>
     <main>
+        <div class="container">
+            <h2>Online Registration Form</h2>
+            <p>Please fill out the form below to register for our tennis and pickleball lessons and services.</p>
+            
+            <form action="#" method="POST" id="registrationForm">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
 
-        <body>
-            <div class="container">
-                <h2>Online Registration Form</h2>
-                <p>Please fill out the form below to register for our tennis and pickleball lessons and services.</p>
-                
-                <form action="#" method="POST">
-                    <label for="fullName">Full Name:</label>
-                    <input type="text" id="fullName" name="fullName" required>
-        
-                    <label for="email">Email Address:</label>
-                    <input type="email" id="email" name="email" required>
-        
-                    <label for="phone">Phone Number:</label>
-                    <input type="tel" id="phone" name="phone" required>
-        
-                    <label for="lessonType">Select the type of lessons you are interested in:</label>
-                    <select id="lessonType" name="lessonType" required>
-                        <option value="">Select one...</option>
-                        <option value="Individual - First Two Lessons">First Two Lessons (50 minutes x 2) - FREE</option>
-                        <option value="Individual - Single Lesson">Individual Lesson (50 mins) - $60</option>
-                        <option value="Individual - 5 Pack">5-Pack, Ind or Grp Lessons (250 mins) - $180</option>
-                        <option value="Individual - 10 Lessons">5-Week, 10 Lessons Ind or Grp (500 mins) - $300</option>
-                        <option value="Group - 2 Players">Per Individual for 2 players (50 mins) - $25 each</option>
-                        <option value="Group - 3 Players">Per Individual for 3 players (50 mins) - $18 each</option>
-                        <option value="Group - 4 Players">Per Individual for 4 players (50 mins) - $15 each</option>
-                        <option value="Group - 5-8 Players">Per Individual for 5 - 8 players (60 - 80 mins) - $12 each</option>
-                        <option value="Group - 9+ Players">Per Individual for 9+ players (60 - 80 mins) – TBD</option>
-                        <option value="High Performance - Private">High Performance Training - Private Lessons ($50-$100/hr)</option>
-                        <option value="High Performance - Group">High Performance Training - Group Sessions ($20-$50/session)</option>
-                        <option value="High Performance - Comprehensive">High Performance Training - Comprehensive Program ($1500-$3500/month)</option>
-                    </select>
-        
-                    <label for="additionalServices">Select additional services you are interested in:</label>
-                    <select id="additionalServices" name="additionalServices" multiple>
-                        <option value="Racket Restringing">Racket Restringing (60 mins) - $15</option>
-                        <option value="Restringing + Strings">Racket Restringing + Strings (60 mins) - $35</option>
-                        <option value="Ball Machine 30 mins">Ball Machine Rental (30 mins) - $8</option>
-                        <option value="Ball Machine 55 mins">Ball Machine Rental (55 mins) - $12</option>
-                    </select>
-                    
-                    <label for="lessonDate">Preferred Date for First Lesson:</label>
-                    <input type="date" id="lessonDate" name="lessonDate" required>
-                    
-                    <label for="comments">Additional Comments or Questions:</label>
-                    <textarea id="comments" name="comments" rows="4"></textarea>
-                    
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
-        </body>        
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email address">
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Phone number format: 123-456-7890">
+
+                <label for="lessonType">Select the type of lessons you are interested in:</label>
+                <select id="lessonType" name="lessonType" required>
+                    <option value="">Select one...</option>
+                    <option value="Individual - First Two Lessons">First Two Lessons (50 minutes x 2) - FREE</option>
+                    <option value="Individual - Single Lesson">Individual Lesson (50 mins) - $60</option>
+                    <option value="Individual - 5 Pack">5-Pack, Ind or Grp Lessons (250 mins) - $180</option>
+                    <option value="Individual - 10 Lessons">5-Week, 10 Lessons Ind or Grp (500 mins) - $300</option>
+                    <option value="Group - 2 Players">Per Individual for 2 players (50 mins) - $25 each</option>
+                    <option value="Group - 3 Players">Per Individual for 3 players (50 mins) - $18 each</option>
+                    <option value="Group - 4 Players">Per Individual for 4 players (50 mins) - $15 each</option>
+                    <option value="Group - 5-8 Players">Per Individual for 5 - 8 players (60 - 80 mins) - $12 each</option>
+                    <option value="Group - 9+ Players">Per Individual for 9+ players (60 - 80 mins) – TBD</option>
+                    <option value="High Performance - Private">High Performance Training - Private Lessons ($50-$100/hr)</option>
+                    <option value="High Performance - Group">High Performance Training - Group Sessions ($20-$50/session)</option>
+                    <option value="High Performance - Comprehensive">High Performance Training - Comprehensive Program ($1500-$3500/month)</option>
+                </select>
+
+                <label for="additionalServices">Select additional services you are interested in:</label>
+                <select id="additionalServices" name="additionalServices" multiple>
+                    <option value="Racket Restringing">Racket Restringing (60 mins) - $15</option>
+                    <option value="Restringing + Strings">Racket Restringing + Strings (60 mins) - $35</option>
+                    <option value="Ball Machine 30 mins">Ball Machine Rental (30 mins) - $8</option>
+                    <option value="Ball Machine 55 mins">Ball Machine Rental (55 mins) - $12</option>
+                </select>
+
+                <label for="lessonDate">Preferred Date for First Lesson:</label>
+                <input type="date" id="lessonDate" name="lessonDate" required>
+
+                <label for="comments">Additional Comments or Questions:</label>
+                <textarea id="comments" name="comments" rows="4" placeholder="Enter any additional comments or questions"></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
     </main>
     <footer class="footer">
-            <p><strong>&copy; 2025 Martin Tennis Academy. All rights reserved.</strong></p>
-            <br>
-            <p><strong>Follow Us on Social Media:</strong></p>
-                <div class="social-icons">
-                <a href="https://www.facebook.com/profile.php?id=61569052616812" target="_blank"><img src="C:/website_tennis/images/navigation/facebook.png" alt="Facebook" style="width: 48px; height: 48px;"></a>
-                <a href="#" target="_blank"><img src="C:/website_tennis/images/navigation/instagram.jpeg" alt="Instagram" style="width: 48px; height: 48px;"></a>
-                <a href="#" target="_blank"><img src="C:/website_tennis/images/navigation/youtube.jpeg" alt="YouTube" style="width: 48px; height: 48px;"></a>
-                <a href="#" target="_blank"><img src="C:/website_tennis/images/navigation/tiktok.jpeg" alt="TikTok" style="width: 48px; height: 48px;"></a>
-                </div>
+        <p><strong>&copy; 2025 Martin Tennis Academy. All rights reserved.</strong></p>
+        <br>
+        <p><strong>Follow Us on Social Media:</strong></p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61569052616812" target="_blank"><img src="C:/website_tennis/images/navigation/facebook.png" alt="Facebook" style="width: 48px; height: 48px;"></a>
+            <a href="#" target="_blank"><img src="C:/website_tennis/images/navigation/instagram.jpeg" alt="Instagram" style="width: 48px; height: 48px;"></a>
+            <a href="#" target="_blank"><img src="C:/website_tennis/images/navigation/youtube.jpeg" alt="YouTube" style="width: 48px; height: 48px;"></a>
+            <a href="#" target="_blank"><img src="C:/website_tennis/images/navigation/tiktok.jpeg" alt="TikTok" style="width: 48px; height: 48px;"></a>
+        </div>
     </footer>
-        </body>      
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            const jsonData = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch("http://localhost:5000/register", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(jsonData)
+                });
+
+                if (!response.ok) {
+                    throw new Error("Failed to submit form");
+                }
+
+                const data = await response.json();
+                alert(data.message); // Show confirmation popup
+            } catch (error) {
+                console.error("Error submitting form:", error);
+                alert("Submission failed. Please try again.");
+            }
+        });
+    </script>
+</body>
 </html>

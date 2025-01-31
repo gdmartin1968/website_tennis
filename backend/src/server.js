@@ -1,104 +1,58 @@
-const express = require('express'); // ✅ Import Express
-const app = express(); // ✅ Define 'app' before using it
+require("dotenv").config();
+const express = require("express");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const path = require("path");
+const fs = require("fs");
 
-app.get("/", (req, res) => {
-    res.send("✅ Backend is running! Welcome to Martin Tennis Academy API.");
-});
-
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const { Pool } = require('pg');
-require('dotenv').config();
-
-// ✅ Import JWT middleware
-const authenticateToken = require('./middlewares/authMiddleware');
-
-const pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
-    ssl: { rejectUnauthorized: false }
-});
-
-app.use(express.json()); // ✅ Required to parse JSON requests
-
-// ✅ User Registration Route
-app.post('/register', async (req, res) => {
-    const { name, email, password } = req.body;
-
-    try {
-        const existingUser = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
-
-        if (existingUser.rows.length > 0) {
-            return res.status(400).json({ error: "Email already registered. Please use a different email." });
-        }
-
-        if (!password) {
-            return res.status(400).json({ error: "Password is required." });
-        }
-
-        const saltRounds = 10;
-        const hashedPassword = await bcrypt.hash(password, saltRounds);
-
-        const result = await pool.query(
-            'INSERT INTO users (name, email, password_hash) VALUES ($1, $2, $3) RETURNING id, name, email',
-            [name, email, hashedPassword]
-        );
-
-        res.status(201).json({ message: 'User registered!', user: result.rows[0] });
-    } catch (error) {
-        console.error("🔥 Registration Error:", error);
-        res.status(500).json({ error: error.message || 'Internal Server Error' });
-    }
-});
-
-// ✅ User Login Route with JWT
-app.post('/login', async (req, res) => {
-    const { email, password } = req.body;
-
-    try {
-        const result = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
-
-        if (result.rows.length === 0) {
-            return res.status(401).json({ error: 'Invalid email or password' });
-        }
-
-        const user = result.rows[0];
-        const passwordMatch = await bcrypt.compare(password, user.password_hash);
-
-        if (!passwordMatch) {
-            return res.status(401).json({ error: 'Invalid email or password' });
-        }
-
-        const token = jwt.sign(
-            { id: user.id, email: user.email, name: user.name },
-            process.env.JWT_SECRET,
-            { expiresIn: '1h' }
-        );
-
-        res.status(200).json({ message: 'Login successful!', token });
-    } catch (error) {
-        console.error("🔥 Login Error:", error);
-        res.status(500).json({ error: 'Internal Server Error' });
-    }
-});
-
-// ✅ Protected Route: Get User Profile
-app.get('/profile', authenticateToken, async (req, res) => {
-    try {
-        const user = await pool.query('SELECT id, name, email FROM users WHERE id = $1', [req.user.id]);
-
-        if (user.rows.length === 0) {
-            return res.status(404).json({ error: "User not found" });
-        }
-
-        res.json(user.rows[0]);
-    } catch (error) {
-        console.error("🔥 Profile Error:", error);
-        res.status(500).json({ error: "Internal Server Error" });
-    }
-});
-
-// ✅ Define the PORT and start the server
+const app = express();
 const PORT = process.env.PORT || 5000;
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Serve Static Files (to allow direct access to schedule.html)
+app.use(express.static(path.join(__dirname, "../../frontend/public")));
+// Function to log form data to a file
+const logFormData = (data) => {
+    const logFilePath = path.join(__dirname, "form_data.log");
+    const logEntry = `${new Date().toISOString()} - ${JSON.stringify(data)}\n`;
+    fs.appendFile(logFilePath, logEntry, (err) => {
+        if (err) {
+            console.error("Failed to log form data:", err);
+        }
+    });
+};
+
+// Modify the /register route to log form data
+app.post("/register", (req, res) => {
+    const formData = req.body;
+    console.log("Received Registration Form:", formData);
+
+    fs.appendFile("registrations.log", JSON.stringify(formData) + "\n", (err) => {
+        if (err) {
+            console.error("Error saving registration:", err);
+        }
+    });
+
+    res.status(200).json({ message: "Registration submitted successfully!" });
+});
+
+// Test Route
+app.get("/", (req, res) => {
+    res.send("Welcome to Martin Tennis Academy API!");
+});
+
+// API Route to Handle Form Submission
+app.post("/register", (req, res) => {
+    const formData = req.body;
+    console.log("Received Registration Form:", formData);
+    res.status(200).json({ message: "Registration submitted successfully!" });
+});
+
+// Start the server
 app.listen(PORT, () => {
-    console.log(`🚀 Server running on http://localhost:${PORT}`);
+    console.log(`Server is running on http://localhost:${PORT}`);
 });
