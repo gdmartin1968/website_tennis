@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Online Registration Form</h2>
+        <p>Please fill out the form below to register for our tennis and pickleball lessons and services.</p>
+        
+        <form action="#" method="POST">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="lessonType">Select the type of lessons you are interested in:</label>
+            <select id="lessonType" name="lessonType" required>
+                <option value="">Select one...</option>
+                <option value="Individual - First Two Lessons">First Two Lessons (50 minutes x 2) - FREE</option>
+                <option value="Individual - Single Lesson">Individual Lesson (50 mins) - $60</option>
+                <option value="Individual - 5 Pack">5-Pack, Ind or Grp Lessons (250 mins) - $180</option>
+                <option value="Individual - 10 Lessons">5-Week, 10 Lessons Ind or Grp (500 mins) - $300</option>
+                <option value="Group - 2 Players">Per Individual for 2 players (50 mins) - $25 each</option>
+                <option value="Group - 3 Players">Per Individual for 3 players (50 mins) - $18 each</option>
+                <option value="Group - 4 Players">Per Individual for 4 players (50 mins) - $15 each</option>
+                <option value="Group - 5-8 Players">Per Individual for 5 - 8 players (60 - 80 mins) - $12 each</option>
+                <option value="Group - 9+ Players">Per Individual for 9+ players (60 - 80 mins) – TBD</option>
+                <option value="High Performance - Private">High Performance Training - Private Lessons ($50-$100/hr)</option>
+                <option value="High Performance - Group">High Performance Training - Group Sessions ($20-$50/session)</option>
+                <option value="High Performance - Comprehensive">High Performance Training - Comprehensive Program ($1500-$3500/month)</option>
+            </select>
+
+            <label for="additionalServices">Select additional services you are interested in:</label>
+            <select id="additionalServices" name="additionalServices" multiple>
+                <option value="Racket Restringing">Racket Restringing (60 mins) - $15</option>
+                <option value="Restringing + Strings">Racket Restringing + Strings (60 mins) - $35</option>
+                <option value="Ball Machine 30 mins">Ball Machine Rental (30 mins) - $8</option>
+                <option value="Ball Machine 55 mins">Ball Machine Rental (55 mins) - $12</option>
+            </select>
+            
+            <label for="lessonDate">Preferred Date for First Lesson:</label>
+            <input type="date" id="lessonDate" name="lessonDate" required>
+            
+            <label for="comments">Additional Comments or Questions:</label>
+            <textarea id="comments" name="comments" rows="4"></textarea>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
