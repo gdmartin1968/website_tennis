@@ -243,5 +243,19 @@
             <a href="#" target="_blank"><img src="C:/website_tennis/images/navigation/tiktok.jpeg" alt="TikTok" style="width: 48px; height: 48px;"></a>
         </div>
     </footer>
+    <script>
+        function loadNav() {
+            fetch("nav.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("nav-placeholder").innerHTML = data;
+            });
+        }
+        loadNav(); // Load navigation dynamically
+    
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('show');
+        }
+    </script>
 </body>
 </html>
