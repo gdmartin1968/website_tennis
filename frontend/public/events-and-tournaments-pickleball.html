@@ -92,13 +92,11 @@
     </style>
 </head>
 <body>
-    <header>
         <header>
             <h1>Martin Tennis Academy</h1>
             <span class="menu-icon" onclick="toggleMenu()">?</span>
             <div id="nav-placeholder"></div>
         </header>
-
     <main>
         <h2>Upcoming Pickleball Events</h2>
         <section>
@@ -150,6 +148,20 @@
         function toggleMenu() {
             document.querySelector('.nav-links').classList.toggle('show');
         }
+    </script>
+    <script>
+        function loadNav() {
+            fetch("nav.html")
+            .then(response => response.text())
+            .then(data => {
+            document.getElementById("nav-placeholder").innerHTML = data;
+            });
+        }
+        loadNav(); // Load navigation dynamically
+
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('show');
+    }
     </script>
 </body>
 </html>

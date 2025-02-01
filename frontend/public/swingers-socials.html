@@ -85,18 +85,10 @@
 <body>
     <header>
         <h1>Martin Tennis Academy</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="services.html">Services & Pricing</a>
-            <a href="#schedule" style="background-color: #ff008c; padding: 5px 10px; border-radius: 5px;">Schedule Lessons</a>
-            <a href="vlog.html">Vlog</a>
-            <a href="testimonials.html">Testimonials</a>
-            <a href="#login" style="background-color: #ffa500; padding: 5px 10px; border-radius: 5px;">PARENT/PLAYER LOGIN</a>
-            <a href="contact.html">Contact Us</a>
-        </nav>
+        <span class="menu-icon" onclick="toggleMenu()">?</span>
+        <div id="nav-placeholder"></div>
     </header>
-
-    
+    <main>
         <h2>Swingers Socials - Because Tennis and Pickleball Players know how to MOVE! 😉</h2>
             <article>
             <h3 style="text-align: center;">Hosted by Martin Tennis Academy and the facility hosting the event... So read on!</h3>
@@ -113,7 +105,7 @@
     <div style="flex: 2; background-color: #f0f0f0; padding: 20px; margin-left: 20px; border-left: 5px solid #ff008c; font-size: 1.8em; font-style: italic; text-align: left;">
         “The DJ/Host for our event was wonderful. She played soooo many good songs. And her beginner lesson before the actual dance was PHENOMENAL! ❤️ - Tennis Mom”
     </div>
-</div>
+    </div>
         </article>
 
     </main>
@@ -128,5 +120,19 @@
             <a href="#" target="_blank"><img src="C:/website_tennis/images/navigation/tiktok.jpeg" alt="TikTok" style="width: 48px; height: 48px;"></a>
         </div>
     </footer>
+    <script>
+        function loadNav() {
+            fetch("nav.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("nav-placeholder").innerHTML = data;
+            });
+        }
+        loadNav(); // Load navigation dynamically
+    
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('show');
+        }
+    </script>
 </body>
 </html>

@@ -105,16 +105,8 @@
 <body>
     <header>
         <h1>Martin Tennis Academy</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="services.html">Services & Pricing</a>
-            <a href="#schedule" style="background-color: #ff008c; padding: 5px 10px; border-radius: 5px;">Schedule Lessons</a>
-            <a href="vlog.html">Vlog</a>
-            <a href="testimonials.html">Testimonials</a>
-            <a href="#login" style="background-color: #ffa500; padding: 5px 10px; border-radius: 5px;">PARENT/PLAYER LOGIN</a>
-            <a href="contact.html">Contact Us</a>
-        </nav>
+        <span class="menu-icon" onclick="toggleMenu()">?</span>
+        <div id="nav-placeholder"></div>
     </header>
     <main>
         <div class="container">
@@ -203,6 +195,20 @@
                 alert("Submission failed. Please try again.");
             }
         }, { once: true });
+    </script>
+        <script>
+        function loadNav() {
+            fetch("nav.html")
+            .then(response => response.text())
+            .then(data => {
+            document.getElementById("nav-placeholder").innerHTML = data;
+        });
+    }
+    loadNav(); // Load navigation dynamically
+
+    function toggleMenu() {
+        document.querySelector('.nav-links').classList.toggle('show');
+    }
     </script>
 </body>
 </html>
