@@ -301,22 +301,14 @@
         }
     </style>
     <script defer="defer" src="/static/js/main.63191e21.js"></script>
-    <script defer="defer" src="/static/js/main.30d391a0.js"></script>
+    <!-- <script defer="defer" src="/static/js/main.30d391a0.js"></script> -->
+
 </head>
 <body>
     <header>
         <h1>Martin Tennis Academy</h1>
         <span class="menu-icon" onclick="toggleMenu()">☰</span>
-        <nav class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="services.html">Services & Pricing</a>
-            <a href="schedule.html" style="background-color:#ff008c; padding:5px 10px; border-radius:5px">Schedule Lessons</a>
-            <a href="vlog.html">Vlog</a>
-            <a href="testimonials.html">Testimonials</a>
-            <a href="login.html" style="background-color:orange; padding:5px 10px; border-radius:5px">PARENT/PLAYER LOGIN</a>
-            <a href="contact.html">Contact Us</a>
-        </nav>
+        <div id="nav-placeholder"></div>
     </header>
     <div class="hero">
         <div class="video-slider">
@@ -482,6 +474,15 @@
         });
     </script>
 <script>
+    function loadNav() {
+        fetch("nav.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("nav-placeholder").innerHTML = data;
+        });
+    }
+    loadNav(); // Load navigation dynamically
+
     function toggleMenu() {
         document.querySelector('.nav-links').classList.toggle('show');
     }
