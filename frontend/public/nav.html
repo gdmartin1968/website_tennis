@@ -29,3 +29,42 @@
         }
     }
 </style>
+<button class="hamburger" aria-label="Toggle navigation">
+    &#9776;
+</button>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', function() {
+            navLinks.classList.toggle('nav-links-collapsed');
+        });
+    });
+</script>
+
+<style>
+    .hamburger {
+        display: none;
+        font-size: 30px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    @media (max-width: 767px) {
+        .hamburger {
+            display: block;
+        }
+
+        .nav-links {
+            display: none;
+            flex-direction: column;
+        }
+
+        .nav-links.nav-links-collapsed {
+            display: flex;
+        }
+    }
+</style>cd C:\website_tennis\server\
