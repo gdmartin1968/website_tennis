@@ -211,17 +211,7 @@
         
         
     </main>
-    <footer class="footer">
-        <p><strong>&copy; 2025 Martin Tennis Academy. All rights reserved.</strong></p>
-        <br>
-        <p><strong>Follow Us on Social Media:</strong></p>
-        <div class="social-icons">
-            <a href="https://www.facebook.com/profile.php?id=61569052616812" target="_blank"><img src="C:/website_tennis/images/navigation/facebook.png" alt="Facebook" style="width: 48px; height: 48px;"></a>
-            <a href="#" target="_blank"><img src="C:/website_tennis/images/navigation/instagram.jpeg" alt="Instagram" style="width: 48px; height: 48px;"></a>
-            <a href="#" target="_blank"><img src="C:/website_tennis/images/navigation/youtube.jpeg" alt="YouTube" style="width: 48px; height: 48px;"></a>
-            <a href="#" target="_blank"><img src="C:/website_tennis/images/navigation/tiktok.jpeg" alt="TikTok" style="width: 48px; height: 48px;"></a>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
     <script>
         function loadNav() {
             fetch("nav.html")
@@ -236,5 +226,16 @@
             document.querySelector('.nav-links').classList.toggle('show');
         }
     </script>
+<script>
+    function loadFooter() {
+        fetch("/footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("footer-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading footer:", error));
+    }
+    loadFooter();
+</script>
 </body>
 </html>
