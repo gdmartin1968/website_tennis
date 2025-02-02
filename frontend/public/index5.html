@@ -117,6 +117,40 @@
         <span class="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></span>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <div id="nav-placeholder"></div>
+        <style>
+            .menu-icon {
+            display: none;
+            }
+            @media (max-width: 768px) {
+            .menu-icon {
+                display: inline-block;
+            }
+            .nav-links {
+                display: none;
+            }
+            .nav-links.show {
+                display: block;
+            }
+            }
+        </style>
+        <script>
+            function toggleMenu() {
+                document.querySelector('.nav-links').classList.toggle('show');
+            }
+            document.addEventListener("DOMContentLoaded", function() {
+                loadNav(); // Load navigation dynamically after DOM is loaded
+            });
+        </script>
+        <script>
+            function loadNav() {
+                fetch("nav.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("nav-placeholder").innerHTML = data;
+                });
+            }
+            document.addEventListener("DOMContentLoaded", loadNav);
+        </script>
     </header>
     <main>
         <h2>Vlog Section</h2>

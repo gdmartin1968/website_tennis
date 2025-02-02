@@ -86,7 +86,20 @@
     <header>
         <h1>Martin Tennis Academy</h1>
         <span class="menu-icon" onclick="toggleMenu()">☰</span>
-        <div id="nav-placeholder"></div>
+        <nav id="nav-placeholder"></nav>
+        <style>
+            .menu-icon {
+            display: none;
+            }
+            @media (max-width: 768px) {
+            .menu-icon {
+                display: inline-block;
+                cursor: pointer;
+                font-size: 1.5em;
+                margin-left: 20px;
+            }
+            }
+        </style>
     </header>
     
         <h2>About Us</h2>
@@ -145,19 +158,22 @@
         loadNav(); // Load navigation dynamically
     
         function toggleMenu() {
-            document.querySelector('.nav-links').classList.toggle('show');
+            const navLinks = document.querySelector('#nav-placeholder nav');
+            if (navLinks) {
+                navLinks.classList.toggle('show');
+            }
         }
     </script>
-<script>
-    function loadFooter() {
-        fetch("/footer.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("footer-placeholder").innerHTML = data;
-        })
+    <script>
+        function loadFooter() {
+            fetch("/footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            })
         .catch(error => console.error("Error loading footer:", error));
     }
     loadFooter();
-</script>
+    </script>
 </body>
 </html>
