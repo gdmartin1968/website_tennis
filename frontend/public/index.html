@@ -24,67 +24,46 @@
         margin: 0;
         font-size: 2em;
     }
-    nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-    nav a {
-        color: #fff;
-        text-decoration: none;
-        margin: 5px 10px;
-        font-weight: 700;
-    }
-
-    /* Mobile Menu Styles */
-    .menu-icon {
-        display: none;
-        font-size: 2em;
-        cursor: pointer;
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        color: white;
-    }
-
-    .nav-links {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        header {
-            text-align: left;
-            padding: 15px;
-        }
-        header h1 {
-            font-size: 1.5em;
+}
+        nav {
+            margin-top: 10px;
         }
         .menu-icon {
-            display: block;
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
         }
         .nav-links {
-            display: none;
-            flex-direction: column;
-            width: 100%;
-            background: black;
-            text-align: center;
+            display: flex;
+            justify-content: center;
         }
         .nav-links a {
-            padding: 10px;
-            display: block;
-            border-bottom: 1px solid #555;
+            padding: 14px 20px;
         }
-        .nav-links.show {
-            display: flex;
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .nav-links a {
+                padding: 10px;
+                border-top: 1px solid #fff;
+            }
         }
-        .nav-links.show + .menu-icon {
-            display: block;
-            color: blue;
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
         }
-    }
         .hero {
             position: relative;
             height: calc(100vh - 3.2in);
@@ -312,6 +291,7 @@
 <body>
     <header>
         <h1>Martin Tennis Academy</h1>
+        br
         <span class="menu-icon" onclick="toggleMenu()">☰</span>
         <nav class="nav-links" id="nav-placeholder">
             <!-- Navigation links will be dynamically loaded here -->
