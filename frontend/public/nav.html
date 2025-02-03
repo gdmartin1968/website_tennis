@@ -29,7 +29,7 @@
         }
     }
 </style>
-<button class="hamburger" aria-label="Toggle navigation">
+<button class="hamburger" aria-label="Toggle navigation" onclick="toggleNav()">
     &#9776;
 </button>
 
@@ -42,6 +42,11 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     .catch(error => console.error("Error loading navigation:", error));
 });
+
+function toggleNav() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('nav-links-collapsed');
+}
 </script>
 
 <style>
