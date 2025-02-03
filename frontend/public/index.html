@@ -108,7 +108,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            /* background: url('./images/background.png') no-repeat center center/cover; */
+            background: url('./images/background.png') no-repeat center center/cover;
             display: none;
             z-index: 0;
             opacity: .5;
@@ -309,47 +309,49 @@
     <header>
         <h1>Martin Tennis Academy</h1>
         <span class="menu-icon" onclick="toggleMenu()">☰</span>
-        <nav class="nav-links" id="nav-placeholder"></nav>
+        <nav class="nav-links" id="nav-placeholder">
+            <!-- Navigation links will be dynamically loaded here -->
+        </nav>
     </header>
     <div class="hero">
         <div class="video-slider">
-            <video autoplay muted loop>
+            <video id="video1" preload="none" autoplay muted loop>
                 <source src="videos/pb-at-lolrc-demo-only.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <video autoplay muted loop>
+            <video id="video2" preload="none" autoplay muted loop>
                 <source src="videos/tennis-highlight2.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <video autoplay muted loop>
+            <video id="video3" preload="none" autoplay muted loop>
                 <source src="videos/tennis-highlight3.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <video autoplay muted loop>
+            <video id="video4" preload="none" autoplay muted loop>
                 <source src="videos/gym-exercises-1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <video autoplay muted loop>
+            <video id="video5" preload="none" autoplay muted loop>
                 <source src="videos/pure-joy-hitting-the-winner.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <video autoplay muted loop>
+            <video id="video6" preload="none" autoplay muted loop>
                 <source src="videos/tennis-highlight6.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <video autoplay muted loop>
+            <video id="video7" preload="none" autoplay muted loop>
                 <source src="videos/tennis-highlight7.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <video autoplay muted loop>
+            <video id="video8" preload="none" autoplay muted loop>
                 <source src="videos/tennis-highlight8.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <video autoplay muted loop>
+            <video id="video9" preload="none" autoplay muted loop>
                 <source src="videos/tennis-highlight9.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <video autoplay muted loop>
+            <video id="video10" preload="none" autoplay muted loop>
                 <source src="videos/tennis-highlight10.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -357,7 +359,7 @@
         <br>
         <div class="hero-content">
             <br>
-            <img src="images/background.png" alt="Let's Move!" style="width:50%; position:relative; top:2.8in">
+            <!-- <img src="images/background.png" alt="Let's Move!" style="width:50%; position:relative; top:2.8in"> -->
             <a href="quiz.html" style="background-color:red; position:relative; top:3in; font-weight:700">What is the best path for me? Take the quiz now to find out!</a>
         </div>
     </div>
@@ -489,4 +491,4 @@
     }
 </script>
 </body>
-</html></a></div></video>
+</html>
