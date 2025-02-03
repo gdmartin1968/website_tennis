@@ -26,6 +26,36 @@
         nav {
             margin-top: 10px;
         }
+        .menu-icon {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+        }
+        .nav-links a {
+            padding: 14px 20px;
+        }
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .nav-links a {
+                padding: 10px;
+                border-top: 1px solid #fff;
+            }
+        }
         nav a {
             color: #fff;
             text-decoration: none;
@@ -78,8 +108,14 @@
 <body>
     <header>
         <h1>Martin Tennis Academy</h1>
-        <span class="menu-icon" onclick="toggleMenu()">?</span>
         <div id="nav-placeholder"></div>
+        <script>
+            fetch("/nav.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("nav-placeholder").innerHTML = data;
+            });
+        </script>
     </header>
     <main>
         <h2>Testimonials</h2>
@@ -187,7 +223,8 @@
         loadNav(); // Load navigation dynamically
     
         function toggleMenu() {
-            document.querySelector('.nav-links').classList.toggle('show');
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('show');
         }
     </script>
 <script>
