@@ -1,75 +1,97 @@
-<nav class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services & Pricing</a>
-    <a href="schedule.html" style="background-color:#ff008c; padding:5px 10px; border-radius:5px">Schedule Lessons</a>
-    <a href="vlog.html">Vlog</a>
-    <a href="testimonials.html">Testimonials</a>
-    <a href="login.html" style="background-color:orange; padding:5px 10px; border-radius:5px">PARENT/PLAYER LOGIN</a>
-    <a href="contact.html">Contact Us</a>
-</nav>
-
-<style>
-    .nav-links {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    @media (min-width: 768px) {
-        .nav-links {
-            flex-direction: row;
-            justify-content: center;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
         }
-    }
-
-    @media (max-width: 767px) {
-        .nav-links {
-            align-items: flex-start;
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000;
+            padding: 15px 20px;
         }
-    }
-</style>
-<button class="hamburger" aria-label="Toggle navigation" onclick="toggleNav()">
-    &#9776;
-</button>
+        .navbar h1 {
+            color: white;
+            font-size: 1.8em;
+            margin: 0;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1em;
+        }
+        .schedule-btn {
+            background-color: #ff008c;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+        .login-btn {
+            background-color: orange;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+        /* Mobile menu */
+        .menu-icon {
+            display: none;
+            font-size: 1.5em;
+            color: white;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #000;
+                text-align: center;
+                padding: 10px 0;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .menu-icon {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="navbar">
+    <span class="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></span>
+    <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services & Pricing</a>
+        <a href="schedule.html" class="schedule-btn">Schedule Lessons</a>
+        <a href="vlog.html">Vlog</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="login.html" class="login-btn">PARENT/PLAYER LOGIN</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+</header>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-    fetch("/nav.html")  // Leading `/` ensures it loads from the `public` folder
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById("nav-placeholder").innerHTML = data;
-    })
-    .catch(error => console.error("Error loading navigation:", error));
-});
-
-function toggleNav() {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('nav-links-collapsed');
-}
+    function toggleMenu() {
+        document.querySelector('.nav-links').classList.toggle('show');
+    }
 </script>
 
-<style>
-    .hamburger {
-        display: none;
-        font-size: 30px;
-        background: none;
-        border: none;
-        cursor: pointer;
-    }
-
-    @media (max-width: 767px) {
-        .hamburger {
-            display: block;
-        }
-
-        .nav-links {
-            display: none;
-            flex-direction: column;
-        }
-
-        .nav-links.nav-links-collapsed {
-            display: flex;
-        }
-    }
-</style>
+</body>
+</html>
