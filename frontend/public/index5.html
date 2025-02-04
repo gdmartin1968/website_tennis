@@ -22,22 +22,24 @@
             margin: 0;
             font-size: 2.5em;
         }
+        h2 {
+            color: #ff008c;
+            text-align: center;
+            margin-bottom: 30px;
+        }
         nav {
-            margin-top: 10px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
         }
         nav a {
             color: #fff;
             text-decoration: none;
             margin: 0 15px;
-            font-weight: bold;
         }
-        main {
-            padding: 20px 10%;
-        }
-        h2 {
-            color: #ff008c;
-            text-align: center;
-            margin-bottom: 30px;
+        nav a:hover {
+            text-decoration: underline;
         }
         article {
             margin-bottom: 20px;
@@ -113,13 +115,6 @@
 <body>
     <header>
         <div id="nav-placeholder"></div>
-        <script>
-            fetch("/nav.html")
-            .then(response => response.text())
-            .then(data => {
-            document.getElementById("nav-placeholder").innerHTML = data;
-            });
-        </script>
     </header>
     <main>
         <h2>Learn More About Us!</h2>
@@ -155,21 +150,22 @@
             </div>
         </div>
     </main>
-    <div id="footer-placeholder"></div>
     <script>
         function loadNav() {
             fetch("/nav.html")
             .then(response => response.text())
-            .then(data => {
-                document.getElementById("nav-placeholder").innerHTML = data;
-            });
-        }
-        loadNav(); // Load navigation dynamically
+        .then(data => {
+            document.getElementById("nav-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading navigation:", error));
+    }
+    loadNav(); // Load navigation dynamically
     
         function toggleMenu() {
             document.querySelector('.nav-links').classList.toggle('show');
         }
     </script>
+    <div id="footer-placeholder"></div>
 <script>
     function loadFooter() {
         fetch("/footer.html")
