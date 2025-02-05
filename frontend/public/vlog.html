@@ -160,7 +160,7 @@
                 <a href="videos/the-future-of-tennis.mp4">
                 <img src="images/rose-colored-translucent-tennis-racket.png" alt="The Future of Tennis?">
                 </a>
-                <span><strong>The Future of Tennis Rackets?</strong></span>
+                <span><strong>The Future of Tennis?</strong></span>
             </div>
             </div>
         </div>  
@@ -181,19 +181,6 @@
         }
     </script>
     <script>
-        document.querySelectorAll('.carousel-item img').forEach((img, index) => {
-            img.addEventListener('click', () => {
-                const videoUrls = [
-                    'videos/video1.mp4',
-                    'videos/you-are-not-a-nice-person.mp4',
-                    'videos/you-are-not-a-nice-person.mp4',
-                    'videos/you-are-not-a-nice-person.mp4',
-                    'videos/you-are-not-a-nice-person.mp4',
-                    'videos/you-are-not-a-nice-person.mp4'
-                ];
-                window.location.href = videoUrls[index];
-            });
-        });
 
         function loadFooter() {
             fetch("/footer.html")
