@@ -121,28 +121,33 @@
         <h2>Vlog Section</h2>
         <div class="carousel">
             <div class="carousel-item">
-                <a href="videos/you-are-not-a-nice-person.mp4"></a>
+                <a href="videos/pb-training-francais.mp4">
                 <img src="images/pb-training-francais.png" alt="Pickleball Training in France!">
+                </a>
                 <span><strong>Pickleball Training in France!</strong></span>
             </div>
             <div class="carousel-item">
-                <a href="videos/tennis-soccer.mp4"></a>
+                <a href="videos/tennis-soccer.mp4">
                 <img src="images/tennis-soccer.png" alt="Tennis Soccer!">
+                </a>
                 <span><strong>Tennis Soccer!</strong></span>
             </div>
             <div class="carousel-item">
-                <a href="videos/gym-exercises-1.mp4"></a>
+                <a href="videos/gym-exercises-1.mp4">
                 <img src="images/gym-exercises-1.png" alt="Gym Exercises for Tennis & Pickleball Players">
+                </a>
                 <span><strong>Gym Exercises for Tennis & Pickleball Players</strong></span>
             </div>
             <div class="carousel-item">
-                <a href="videos/pb-at-lolrc-demo-only.mp4"></a>
+                <a href="videos/pb-at-lolrc-demo-only.mp4">
                 <img src="images/pb-at-lolrc.png" alt="Pickleball at Land O' Lakes Recreation Complex!">
+                </a>
                 <span><strong>Pickleball at Land O' Lakes Recreation Complex!</strong></span>
             </div>
             <div class="carousel-item">
-                <a href="videos/you-are-not-a-nice-person.mp4"></a>
-                <img src="images/pure-joy-hitting-the-winner.png" alt="Pure joy hitting the winner!">
+                <a href="videos/pure-joy-hitting-the-winner.mp4">
+                    <img src="images/pure-joy-hitting-the-winner.png" alt="Pure joy hitting the winner!">
+                </a>
                 <span><strong>Pure joy hitting the winner!</strong></span>
             </div>
             <div class="carousel-item">
@@ -152,7 +157,9 @@
                 <span><strong>You are not a nice person! 😂</strong></span>
             </div>
             <div class="carousel-item">
+                <a href="videos/the-future-of-tennis.mp4">
                 <img src="images/rose-colored-translucent-tennis-racket.png" alt="The Future of Tennis?">
+                </a>
                 <span><strong>The Future of Tennis Rackets?</strong></span>
             </div>
             </div>
@@ -173,26 +180,30 @@
             document.querySelector('.nav-links').classList.toggle('show');
         }
     </script>
-<script>
-    document.querySelectorAll('.carousel-item img').forEach((img, index) => {
-        img.addEventListener('click', () => {
-            const videoUrls = [
-                'videos/video1.mp4',
-                'videos\you-are-not-a-nice-person.mp4',
-                'videos\you-are-not-a-nice-person.mp4',
-                'videos\you-are-not-a-nice-person.mp4',
-                'videos\you-are-not-a-nice-person.mp4',
-                'videos\you-are-not-a-nice-person.mp4,
-                '
-    function loadFooter() {
-        fetch("/footer.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("footer-placeholder").innerHTML = data;
-        })
-        .catch(error => console.error("Error loading footer:", error));
-    }
-    loadFooter();
-</script>
+    <script>
+        document.querySelectorAll('.carousel-item img').forEach((img, index) => {
+            img.addEventListener('click', () => {
+                const videoUrls = [
+                    'videos/video1.mp4',
+                    'videos/you-are-not-a-nice-person.mp4',
+                    'videos/you-are-not-a-nice-person.mp4',
+                    'videos/you-are-not-a-nice-person.mp4',
+                    'videos/you-are-not-a-nice-person.mp4',
+                    'videos/you-are-not-a-nice-person.mp4'
+                ];
+                window.location.href = videoUrls[index];
+            });
+        });
+
+        function loadFooter() {
+            fetch("/footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            })
+            .catch(error => console.error("Error loading footer:", error));
+        }
+        loadFooter();
+    </script>
 </body>
 </html>
