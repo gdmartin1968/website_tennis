@@ -26,18 +26,43 @@
         }
 
         nav {
-            display: flex;
-            gap: 15px;
+            margin-top: 10px;
         }
-
+        .menu-icon {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+        }
+        .nav-links a {
+            padding: 14px 20px;
+        }
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .nav-links a {
+                padding: 10px;
+                border-top: 1px solid #fff;
+            }
+        }
         nav a {
             color: #fff;
             text-decoration: none;
+            margin: 0 15px;
             font-weight: bold;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
         }
 
         .survey-section {
@@ -104,8 +129,11 @@
 <body>
     <header>
         <h1>Martin Tennis Academy</h1>
-        <span class="menu-icon" onclick="toggleMenu()">?</span>
-        <div id="nav-placeholder"></div>
+        <br>
+        <span class="menu-icon" onclick="toggleMenu()">☰</span>
+        <nav class="nav-links" id="nav-placeholder">
+            <!-- Navigation links will be dynamically loaded here -->
+        </nav>
     </header>
     <main>
         <section id="survey" class="survey-section">
@@ -223,6 +251,9 @@
                 </div>
 
                 <div id="footer-placeholder"></div>
+       
+    </script>
+    <script>
         function loadNav() {
             fetch("nav.html")
             .then(response => response.text())
