@@ -427,6 +427,20 @@ nav {
             <a href="remote-learning-opportunities.html" class="button">&#10095;</a>
         </div>
     </div>
+    <script>
+        function loadNav() {
+            fetch("nav.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("nav-placeholder").innerHTML = data;
+            });
+        }
+        loadNav(); // Load navigation dynamically
+    
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('show');
+        }
+    </script>
     <footer class="footer">
         <p><strong>&copy; 2025 Martin Tennis Academy. All rights reserved.</strong></p>
         <p><strong>Follow Us on Social Media:</strong></p>
@@ -458,19 +472,5 @@ nav {
             }, durations[currentIndex]);
         });
     </script>
-<script>
-    function loadNav() {
-        fetch("nav.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("nav-placeholder").innerHTML = data;
-        });
-    }
-    loadNav(); // Load navigation dynamically
-
-    function toggleMenu() {
-        document.querySelector('.nav-links').classList.toggle('show');
-    }
-</script>
 </body>
 </html>
