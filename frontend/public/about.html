@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="icon" href="images/mta-logo.png" type="image/png">
@@ -95,6 +95,26 @@
                 margin: 0 auto;
             }
         }
+        .quote {
+            display: flex;
+            align-items: start;
+            margin-top: 20px;
+        }
+        .quote img {
+            flex: 1;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+        .quote div {
+            flex: 2;
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin-left: 20px;
+            border-left: 5px solid #ff008c;
+            font-size: 1.8em;
+            font-style: italic;
+            text-align: left;
+        }
     </style>
 </head>
 <body>
@@ -104,22 +124,22 @@
         <nav id="nav-placeholder"></nav>
         <style>
             .menu-icon {
-            display: none;
+                display: none;
             }
             @media (max-width: 768px) {
-            .menu-icon {
-                display: inline-block;
-                cursor: pointer;
-                font-size: 1.5em;
-                margin-left: 20px;
-            }
+                .menu-icon {
+                    display: inline-block;
+                    cursor: pointer;
+                    font-size: 1.5em;
+                    margin-left: 20px;
+                }
             }
         </style>
-        <img src="images/meet-the-head-coach.png" alt="Meet the Head Coach" class="responsive-img">
-    
+    </header>
+    <main>
         <h2>About Us</h2>
         <p class="intro">Welcome to Martin Tennis Academy, where passion for the game meets excellence in training.</p>
-<p class="intro"><span class="highlighted">Unlock your full potential</span> and foster a love for tennis and pickleball.</p>
+        <p class="intro"><span class="highlighted">Unlock your full potential</span> and foster a love for tennis and pickleball.</p>
         <article>
             <h3>Gordon Martin - Founder & Head Coach</h3>
             <p>
@@ -128,19 +148,18 @@
             <p>
                 In addition to teaching, Gordon served as an Assistant Coach at Canterbury High School from 2019 to 2023, where he helped students excel in varsity tennis. He also plans to build competitive tennis programs for both youth and adults at The Ridge at Wiregrass Ranch, aiming to foster a strong tennis community.
             </p>
-            <div style="display: flex; align-items: start;">
-    <div style="flex: 1; text-align: center;">
-        <img src="images/meet-the-head-coach.png" alt="Meet the Head Coach" style="width: 100%; max-width: 400px; border-radius: 10px; float: left; margin-right: 20px;">
-        </div>
-    <div style="flex: 2; background-color: #f0f0f0; padding: 20px; margin-left: 20px; border-left: 5px solid #ff008c; font-size: 1.8em; font-style: italic; text-align: left;">
-        “The absolute joy I feel teaching and playing tennis is a singular source of energy for me that propels me to seek out betterment in myself and every single student that I have the honor of working with. - - Coach Gordon”
-    </div>
-    <div style="flex: 2; background-color: #f0f0f0; padding: 20px; margin-left: 20px; border-left: 5px solid #ff008c; font-size: 1.8em; font-style: italic; text-align: left;">
-        “My biggest surprise of 2024 was how much I've ended up enjoying pickleball. Wow! Way harder than it looks, and ***fortunately***, way more physical. I Love it! - - Coach Gordon”
-    </div>
-</div>
+            <div class="quote">
+                <img src="images/meet-the-head-coach.png" alt="Meet the Head Coach">
+                <div>
+                    “The absolute joy I feel teaching and playing tennis is a singular source of energy for me that propels me to seek out betterment in myself and every single student that I have the honor of working with. - - Coach Gordon”
+                </div>
+            </div>
+            <div class="quote">
+                <div>
+                    “My biggest surprise of 2024 was how much I've ended up enjoying pickleball. Wow! Way harder than it looks, and ***fortunately***, way more physical. I Love it! - - Coach Gordon”
+                </div>
+            </div>
         </article>
-
         <article>
             <h3>Our Mission</h3>
             <p>
@@ -150,7 +169,6 @@
                 <img src="images/mission.png" alt="Players on the court" style="border-radius: 10px;">
             </p>
         </article>
-
         <article>
             <h3>What Sets Us Apart</h3>
             <p>
@@ -186,9 +204,9 @@
             .then(data => {
                 document.getElementById("footer-placeholder").innerHTML = data;
             })
-        .catch(error => console.error("Error loading footer:", error));
-    }
-    loadFooter();
+            .catch(error => console.error("Error loading footer:", error));
+        }
+        loadFooter();
     </script>
 </body>
 </html>
