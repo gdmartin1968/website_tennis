@@ -1,30 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="images/mta-logo.png" type="image/png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Book Now Page for all services - Martin Tennis Academy</title>
+    <title>Tennis and Pickleball Survey</title>
     <style>
         body {
-            font-family: Helvetica, Arial, sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
-            color: #333;
+            box-sizing: border-box;
         }
+
         header {
-            background-color: #000;
+            background-color: #333;
             color: #fff;
-            padding: 20px 10%;
-            text-align: center;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
+
         header h1 {
             margin: 0;
-            font-size: 2.5em;
         }
+
         nav {
             margin-top: 10px;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+        }
+        .nav-links a {
+            padding: 14px 20px;
+        }
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .nav-links a {
+                padding: 10px;
+                border-top: 1px solid #fff;
+            }
         }
         nav a {
             color: #fff;
@@ -32,207 +64,220 @@
             margin: 0 15px;
             font-weight: bold;
         }
-        .hero {
-            background: none;
-            color: white;
-            padding: 50px 20px;
-            text-align: center;
-        }
-        .glass-button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
-            background: rgba(199, 8, 8, 0.8); /* Increased opacity for more solid color */
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
-        .glass-button:hover {
-            background: rgba(255, 255, 255, 0.4);
-            transform: scale(1.1);
-        }
-        main {
-            padding: 20px 10%;
-        }
-        h2 {
-            color: #ff008c;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        article {
-            margin-bottom: 20px;
+
+        .survey-section {
             padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .survey-section h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .survey-form {
+            max-width: 600px;
+            margin: 0 auto;
             background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        article h3 {
-            margin-top: 0;
-            color: #ffa500;
+
+        .form-group {
+            margin-bottom: 15px;
         }
-        article p {
-            line-height: 1.6;
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
         }
+
+        .form-group input[type="text"],
+        .form-group input[type="radio"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-group button:hover {
+            background-color: #555;
+        }
+
         footer {
-            background-color: #000;
+            background-color: #333;
             color: #fff;
             text-align: center;
             padding: 10px 0;
             margin-top: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-            margin: 20px 0;
-        }
-
-        table caption {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        table th, table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-
-        table th {
-            background-color: #f4f4f4;
-            font-weight: bold;
-            color: #333;
-        }
-
-        table tr:nth-child(even) {
-            background-color: #d3d3d3;
-        }
-
-        table tr:nth-child(odd) {
-            background-color: #f9f9f9;
-        }
-
-        table tr:hover {
-            background-color: #f1f1f1;
-        }
-
-        table td:last-child {
-            color: #555;
-            font-style: italic;
-        }
-
-        .image-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        .image-gallery img {
-            width: auto;
-            height: auto;
-            max-width: 100%;
-            max-height: 300px;
-            object-fit: contain;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .image-gallery img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Martin Tennis Academy</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="services.html">Services & Pricing</a>
-            <a href="#schedule" style="background-color: #ff008c; padding: 5px 10px; border-radius: 5px;">Schedule Lessons</a>
-            <a href="vlog.html">Vlog</a>
-            <a href="testimonials.html">Testimonials</a>
-            <a href="#login" style="background-color: #ffa500; padding: 5px 10px; border-radius: 5px;">PARENT/PLAYER LOGIN</a>
-            <a href="contact.html">Contact Us</a>
+        <br>
+        <span class="menu-icon" onclick="toggleMenu()">☰</span>
+        <nav class="nav-links" id="nav-placeholder">
+            <!-- Navigation links will be dynamically loaded here -->
         </nav>
     </header>
-
     <main>
-        <div class="form-container">
-            <h1>Sign up now for a program, or book a service!</h1>
-            <p class="required" style="margin-top: -10px;"><strong>[All fields are required]</strong></p>
-            <br>
-            <form>
-                <div class="form-group" style="margin-bottom: 20px;"></div>
-                    <label for="parentFirstName">Parent / Guardian First Name</label>
-                    <input type="text" id="parentFirstName" name="parentFirstName" placeholder="First Name" required>
+        <section id="survey" class="survey-section">
+            <h2>Tell Us About You</h2>
+            <form action="/submit-survey" method="POST" class="survey-form">
+                <div style="margin: 20px 0;">
+                    <div class="form-group" style="margin-bottom: 20px;"></div>
+                        <label for="FirstName" style="font-weight: bold;">First Name</label>
+                        <br>
+                        <input type="text" id="FirstName" name="FirstName" placeholder="First Name" required style="width: calc(100% - 2in); padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label for="LastName">Last Name</label>
+                        <input type="text" id="LastName" name="LastName" placeholder="Last Name" required style="width: calc(100% - 2in); padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="email@address.com" required style="width: calc(100% - 2in); padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label for="mobile">Mobile Number</label>
+                        <input type="tel" id="mobile" name="mobile" placeholder="(555) 555-1234" required style="width: calc(100% - 2in); padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                    </div>
+                    <div class="form-group">
+                        <label for="sport-interest" style="font-weight: bold;">I'm interested in:</label>
+                        <select id="sport-interest" name="sport-interest" style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                            <option value="" disabled selected>Select an option...</option>
+                            <option value="tennis">Tennis only</option>
+                            <option value="pickleball">Pickleball only</option>
+                            <option value="both">Tennis & Pickleball</option>
+                            <option value="unsure">Not sure which sport I’d like to learn/master</option>
+                            <option value="other">Other [Please specify in the box below]</option>
+                        </select>
+                        <textarea id="other-sport" name="other-sport" placeholder="Please specify in the box below if you chose 'Other'" style="width: 100%; margin-top: 10px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; display: none;"></textarea>
+                    </div>
                 </div>
-                <div class="form-group" style="margin-bottom: 20px;"></div>
-                    <label for="parentLastName">Parent / Guardian Last Name</label>
-                    <input type="text" id="parentLastName" name="parentLastName" placeholder="Last Name" required>
-                </div>
-                <div class="form-group" style="margin-bottom: 20px;"></div>
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="email@address.com" required>
-                </div>
-                <div class="form-group" style="margin-bottom: 20px;"></div>
-                    <label for="mobile">Mobile Number</label>
-                    <input type="tel" id="mobile" name="mobile" placeholder="(555) 555-1234" required>
-                </div>
-                <div class="form-group" style="margin-bottom: 20px;"></div>
-                    <label for="childFirstName">Child's First Name</label>
-                    <input type="text" id="childFirstName" name="childFirstName" placeholder="Child's First Name" required>
-                </div>
-                <div class="form-group" style="margin-bottom: 20px;"></div>
-                    <label for="childLastName">Child's Last Name</label>
-                    <input type="text" id="childLastName" name="childLastName" placeholder="Child's Last Name" required>
-                </div>
-                <div class="form-group" style="margin-bottom: 20px;"></div>
-                    <label for="childAge">Child's Age</label>
-                    <input type="number" id="childAge" name="childAge" placeholder="Child's Age" required>
-                </div>
-                <div class="form-group" style="margin-bottom: 20px;"></div>
-                    <label for="interest">Which program or service are you signing up for?</label>
-                    <select id="interest" name="interest" required>
-                        <option value="" disabled selected>Select one...</option>
-                        <option value="First Two Lessons (50 minutes x 2) - FREE">First Two Lessons (50 minutes x 2) - FREE</option>
-                        <option value="Individual Lesson (50 mins) - $60">Individual Lesson (50 mins) - $60</option>
-                        <option value="5-Pack, Ind or Grp Lessons (250 mins) - $180">5-Pack, Ind or Grp Lessons (250 mins) - $180</option>
-                        <option value="5-Week, 10 Lessons Ind or Grp (500 mins) - $300">5-Week, 10 Lessons Ind or Grp (500 mins) - $300</option>
-                        <option value="Per Individual for 2 players (50 mins) - $25 each">Per Individual for 2 players (50 mins) - $25 each</option>
-                        <option value="Per Individual for 3 players (50 mins) - $18 each">Per Individual for 3 players (50 mins) - $18 each</option>
-                        <option value="Per Individual for 4 players (50 mins) - $15 each">Per Individual for 4 players (50 mins) - $15 each</option>
-                        <option value="Per Individual for 5 - 8 players (60 - 80 mins) - $12 each">Per Individual for 5 - 8 players (60 - 80 mins) - $12 each</option>
-                        <option value="Per Individual for 9+ players (60 - 80 mins) - TBD">Per Individual for 9+ players (60 - 80 mins) - TBD</option>
-                        <option value="Racket restringing (60 mins) - $15">Racket restringing (60 mins) - $15</option>
-                        <option value="Racket restringing + strings (60 mins) - $35">Racket restringing + strings (60 mins) - $35</option>
-                        <option value="Ball Machine Rental (30 mins) - $8">Ball Machine Rental (30 mins) - $8</option>
-                        <option value="Ball Machine Rental (55 mins) - $12">Ball Machine Rental (55 mins) - $12</option>
+
+                <div class="form-group">
+                    <label for="currently-i">Currently I:</label>
+                    <select id="currently-i" name="currently-i" style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                        <option value="" disabled selected>Select an option...</option>
+                        <option value="cant-control-shots">Can't control my shots enough</option>
+                        <option value="no-stamina">Don't have the stamina to get through a longer, tough match</option>
+                        <option value="not-consistent">Just don't play enough to be consistent</option>
+                        <option value="low-power">Cannot generate enough power on my shots</option>
+                        <option value="lose-matches">Feel like I have the ability to play well, but end up losing matches that I feel I should win</option>
+                        <option value="improve-footwork">Feel great about my game, I just need to improve my footwork</option>
+                        <option value="other">Other [Please specify in the box below]</option>
                     </select>
+                    <textarea id="currently-i-other" name="currently-i-other" placeholder="Please specify here if you chose 'Other'" style="width: 100%; margin-top: 10px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; display: none;"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="make">Make me:</label>
+                    <select id="make" name="make" style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                        <option value="" disabled selected>Select an option...</option>
+                        <option value="better">better</option>
+                        <option value="stronger">stronger</option>
+                        <option value="faster">faster</option>
+                        <option value="more skilled">more skilled</option>
+                        <option value="mentally tougher">mentally tougher</option>
+                        <option value="smarter on the court">smarter on the court</option>
+                        <option value="more patient">more patient</option>
+                        <option value="more confident">more confident</option>
+                        <option value="a problem solver">a problem solver</option>
+                        <option value="more strategic">more strategic</option>
+                        <option value="other">Other [Please specify in the box below]</option>
+                    </select>
+                    <textarea id="make-other" name="make-other" placeholder="Please specify here if you chose 'Other'" style="width: 100%; margin-top: 10px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; display: none;"></textarea>
+                </div>
+
+                <div class="form-group"></div>
+                    <label for="help" style="font-weight: bold;">Help me:</label>
+                    <select id="help" name="help" style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                        <option value="" disabled selected>Select an option...</option>
+                        <option value="improve my serve">improve my serve</option>
+                        <option value="improve my backhand">improve my backhand</option>
+                        <option value="improve my footwork">improve my footwork</option>
+                        <option value="improve my strategy">improve my strategy</option>
+                        <option value="other">Other [Please specify in the box below]</option>
+                    </select>
+                    <textarea id="help-other" name="help-other" placeholder="Please specify here if you chose 'Other'" style="width: 100%; margin-top: 10px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; display: none;"></textarea>
+                </div>
+
+                <div class="form-group"></div>
+                    <label for="willing-to" style="font-weight: bold;">I'm willing to [do anything or everything are not thoughtful enough answers]:</label>
+                    <select id="willing-to" name="willing-to" style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                        <option value="" disabled selected>Select an option...</option>
+                        <option value="practice-daily">Practice daily</option>
+                        <option value="private-lessons">Take private lessons</option>
+                        <option value="group-class">Join a group class</option>
+                        <option value="tournaments">Participate in tournaments</option>
+                        <option value="modify-diet">Modify my diet when necessary</option>
+                        <option value="hiit-training">Do HIIT Training when necessary</option>
+                        <option value="other">Other [Please specify in the box below]</option>
+                    </select>
+                    <textarea id="willing-to-other" name="willing-to-other" placeholder="Please specify here if you chose 'Other'" style="width: 100%; margin-top: 10px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; display: none;"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <br>
+                    <label for="biggest-hurdle">My biggest hurdle is:</label>
+                    <select id="biggest-hurdle" name="biggest-hurdle" style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                        <option value="" disabled selected>Select an option...</option>
+                        <option value="conditioning">My conditioning</option>
+                        <option value="mental-toughness">Lack of mental toughness</option>
+                        <option value="form">My form</option>
+                        <option value="serve">My serve</option>
+                        <option value="lack-of-time">Lack of time</option>
+                        <option value="lack-of-confidence">Lack of confidence</option>
+                        <option value="lack-of-experience">Lack of experience</option>
+                        <option value="other">Other [Please specify in the box below]</option>
+                    </select>
+                    <textarea id="biggest-hurdle-other" name="biggest-hurdle-other" placeholder="Please specify here if you chose 'Other'" style="width: 100%; margin-top: 10px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; display: none;"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="strongest">My strongest trait is:</label>
+                    <select id="strongest" name="strongest" style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc;">
+                        <option value="" disabled selected>Select an option...</option>
+                        <option value="determination">determination</option>
+                        <option value="focus">focus</option>
+                        <option value="endurance">endurance</option>
+                        <option value="agility">agility</option>
+                        <option value="other">Other [Please specify in the box below]</option>
+                    </select>
+                    <textarea id="strongest-other" name="strongest-other" placeholder="Please specify here if you chose 'Other'" style="width: 100%; margin-top: 10px; padding: 10px; border-radius: 5px; border: 1px solid #ccc; display: none;"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="strengths">My other strengths are:</label>
+                    <input type="text" id="strengths" name="strengths" style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc;">
                 </div>
                 <div class="form-group" style="margin-bottom: 20px;"></div>
-                    <label for="location">Location</label>
-                    <select id="location" name="location" required>
-                        <option value="" disabled selected>Select one...</option>
-                        <option value="Sarah Vande Berg Tennis Center - Zephyrhills">Sarah Vande Berg Tennis Center - Zephyrhills</option>
-                        <option value="The Ridge at Wiregrass Ranch – Wesley Chapel">The Ridge at Wiregrass Ranch – Wesley Chapel</option>
-                        <option value="Land O' Lakes Recreation Complex – Land O' Lakes">Land O' Lakes Recreation Complex – Land O' Lakes</option>
-                    </select>
-                </div>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-    </main>
-    <div id="footer-placeholder"></div>
+                <label for="interest">Which program or service are you signing up for?</label>
+                <select id="interest" name="interest" required>
+                    <option value="" disabled selected>Select one...</option>
+                    <option value="First Two Lessons (50 minutes x 2) - FREE">First Two Lessons (50 minutes x 2) - FREE</option>
+                    <option value="Individual Lesson (50 mins) - $60">Individual Lesson (50 mins) - $60</option>
+                    <option value="5-Pack, Ind or Grp Lessons (250 mins) - $180">5-Pack, Ind or Grp Lessons (250 mins) - $180</option>
+                    <option value="5-Week, 10 Lessons Ind or
+                <div id="footer-placeholder"></div>
+       
+    </script>
     <script>
         function loadNav() {
             fetch("nav.html")
@@ -247,16 +292,16 @@
             document.querySelector('.nav-links').classList.toggle('show');
         }
     </script>
-<script>
-    function loadFooter() {
-        fetch("/footer.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("footer-placeholder").innerHTML = data;
-        })
-        .catch(error => console.error("Error loading footer:", error));
-    }
-    loadFooter();
-</script>
-</body>
+    <script>
+        function loadFooter() {
+            fetch("/footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            })
+            .catch(error => console.error("Error loading footer:", error));
+        }
+        loadFooter();
+    </script>
+    </body>
 </html>
