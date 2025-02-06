@@ -11,6 +11,15 @@
         }
         nav {
             margin-top: 10px;
+            display: none;
+        }
+        nav.show {
+            display: block;
+        }
+        .menu-icon {
+            cursor: pointer;
+            font-size: 2em;
+            margin-left: 20px;
         }
         nav a {
             color: #fff;
@@ -56,8 +65,8 @@
         tr:hover {
             background-color: #f1f1f1;
         }
-        td:last-child {
-            font-style: italic;
+        <span class="menu-icon" onclick="toggleMenu()">☰</span>
+        <nav id="nav-placeholder"></nav>
             color: #555;
         }
     </style>
