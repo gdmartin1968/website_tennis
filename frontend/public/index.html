@@ -1,156 +1,134 @@
-<!doctype html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Martin Tennis Academy!</title>
-    <br>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martin Tennis Academy Homepage</title>
     <style>
-            body {
-        font-family: Helvetica, Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f5f5f5;
-        color: #333;
-    }
-    header {
-        background-color: #000;
-        color: #fff;
-        padding: 15px 5%;
-        text-align: center;
-        position: relative;
-        z-index: 2;
-    }
-    header h1 {
-        margin: 0;
-        font-size: 2em;
-    }
-nav {
-            margin-top: 10px;
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
         }
-        .menu-icon {
-            display: none;
-            font-size: 30px;
-            cursor: pointer;
-        }
-        .nav-links {
-            display: flex;
-            justify-content: center;
-        }
-        .nav-links a {
-            padding: 14px 20px;
-        }
-        @media (max-width: 768px) {
-            .menu-icon {
-                display: block;
-            }
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                text-align: center;
-            }
-            .nav-links.show {
-                display: flex;
-            }
-            .nav-links a {
-                padding: 10px;
-                border-top: 1px solid #fff;
-            }
-        }
-        nav a {
+        header {
+            background-color: #000;
             color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-        .hero {
-            position: relative;
-            height: calc(100vh - 3.2in);
-            overflow: hidden;
-        }
-        .video-slider {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            transition: transform .5s ease-in-out;
-        }
-        .video-slider video {
-            flex-shrink: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        /* .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('./images/background.png') no-repeat center center/cover;
-            display: none;
-            z-index: 0;
-            opacity: .5;
-        } */
-        .hero-content {
-            position: relative;
-            text-align: center;
-            color: #fff;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1;
-        }
-        .hero-content h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        .hero-content p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-        }
-        .hero-content a {
-            background-color: orange;
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-size: 1.1em;
-            border-radius: 5px;
-        }
-        .glass-button:hover {
-            background: rgba(255, 255, 255, .4);
-            transform: scale(1.1);
-        }
-        main {
             padding: 20px 10%;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
         }
         h2 {
             color: #ff008c;
             text-align: center;
             margin-bottom: 30px;
         }
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
         article {
             margin-bottom: 20px;
             padding: 20px;
             background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         article h3 {
             margin-top: 0;
-            color: orange;
+            color: #ffa500;
         }
         article p {
             line-height: 1.6;
         }
-        article img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 15px;
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 10px 0 10px 30px; /* Add padding to the left */
+            scrollbar-width: none; /* Hide scrollbar for Firefox */
+        }
+        .carousel::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for Chrome, Safari, and Edge */
+        }
+        .carousel-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 160px; /* Adjust width to match image width */
+            text-align: center;
+            color: #333;
+            margin: 0 10px; /* Adjust margin for even spacing */
+        }
+        .carousel-item img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            margin-bottom: 5px;
+            object-fit: cover;
+            border: 3px solid transparent; /* Default border for styling */
+        }
+        .carousel-item:nth-child(1) img {
+            border-color: red;
+        }
+        .carousel-item:nth-child(2) img {
+            border-color: blue;
+        }
+        .carousel-item:nth-child(3) img {
+            border-color: green;
+        }
+        .carousel-item:nth-child(4) img {
+            border-color: orange;
+        }
+        .carousel-item:nth-child(5) img {
+            border-color: purple;
+        }
+        .carousel-item:nth-child(6) img {
+            border-color: yellow;
+        }
+        .carousel-item:nth-child(7) img {
+            border-color: pink;
+        }
+        .carousel-item:nth-child(8) img {
+            border-color: cyan;
+        }
+        .carousel-item:nth-child(9) img {
+            border-color: red;
+        }
+        .carousel-item:nth-child(10) img {
+            border-color: blue;
+        }
+        .carousel-item:nth-child(11) img {
+            border-color: green;
+        }
+        .carousel-item:nth-child(12) img {
+            border-color: orange;
+        }
+        .carousel-item:nth-child(13) img {
+            border-color: purple;
+        }
+        .carousel-item:nth-child(14) img {
+            border-color: yellow;
+        }
+        .carousel-item:nth-child(15) img {
+            border-color: pink;
+        }
+        .carousel-item:nth-child(16) img {
+            border-color: cyan;
         }
         footer {
             background-color: #000;
@@ -159,318 +137,236 @@ nav {
             padding: 10px 0;
             margin-top: 20px;
         }
-        .tile-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .tile {
-            background: linear-gradient(to bottom, #ff6f61, #5a189a, #6a1b9a);
-            color: #fff;
-            border-radius: 12px;
-            overflow: hidden;
-            position: relative;
-            text-align: center;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, .2);
-            border: 2px solid beige;
-        }
-        .tile .image {
-            flex: 1;
-            background-size: cover;
-            background-position: center;
-            height: 150px;
-            margin-bottom: 20px;
-        }
-        .tile .label {
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-        .tile .button {
-            border: none;
-            color: #fff;
-            font-size: 1rem;
-            border-radius: 50%;
-            width: 45px;
-            height: 45px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px auto 0;
-            cursor: pointer;
-            transition: transform .2s;
-            background: rgba(255, 255, 255, .2);
-            backdrop-filter: blur(5px);
-            border: 2px solid rgba(255, 255, 255, .3);
-        }
-        .tile .button:hover {
-            transform: scale(1.1);
-            background: rgba(255, 255, 255, .4);
-        }
-        .tile:first-child {
-            background: linear-gradient(to bottom, #ff8e80, #6c0c72);
-        }
-        .tile:nth-child(2) {
-            background: linear-gradient(to bottom, #ffcc29, #6d5a7f);
-        }
-        .tile:nth-child(3) {
-            background: linear-gradient(to bottom, #89d7f7, #014e63);
-        }
-        .tile:nth-child(4) {
-            background: linear-gradient(to bottom, #ff726f, #d45757);
-        }
-        .tile:nth-child(5) {
-            background: linear-gradient(to bottom, #62d9a0, #1c6b5f);
-        }
-        .tile:nth-child(6) {
-            background: linear-gradient(to bottom, #ffa07a, #b22222);
-        }
-        .tile:nth-child(7) {
-            background: linear-gradient(to bottom, #6a5acd, #483d8b);
-        }
-        .tile:nth-child(8) {
-            background: linear-gradient(to bottom, #ffb347, #d2691e);
-        }
-        .tile:nth-child(9) {
-            background: linear-gradient(to bottom, teal, #005050);
-        }
-        .tile:nth-child(10) {
-            background: linear-gradient(to bottom, tomato, brown);
-        }
-        .tile:nth-child(11) {
-            background: linear-gradient(to bottom, #4682b4, #2f4f4f);
-        }
-        .tile:nth-child(12) {
-            background: linear-gradient(to bottom, #d8bfd8, indigo);
-        }
-        .tile:nth-child(13) {
-            background: linear-gradient(to bottom, #32cd32, #006400);
-        }
-        .tile:nth-child(14) {
-            background: linear-gradient(to bottom, #ff69b4, #c71585);
-        }
-        .tile:nth-child(15) {
-            background: linear-gradient(to bottom, orange, #ff4500);
-        }
-        .tile:nth-child(16) {
-            background: linear-gradient(to bottom, #1e90ff, #00008b);
-        }
-        .footer {
-            margin-top: 40px;
-            padding: 20px;
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            width: 100%;
-        }
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 10px;
-        }
-        .social-icons a {
-            color: #fff;
-            font-size: 24px;
-            text-decoration: none;
-            transition: color .3s ease;
-        }
-        .social-icons a:hover {
-            color: #ffcc29;
-        }
     </style>
-    <script defer="defer" src="/static/js/main.63191e21.js"></script>
-    <!-- <script defer="defer" src="/static/js/main.30d391a0.js"></script> -->
-
 </head>
 <body>
     <header>
-        <h1>Martin Tennis Academy</h1>
-        <br>
-        <span class="menu-icon" onclick="toggleMenu()">☰</span>
-        <nav class="nav-links" id="nav-placeholder">
-            <!-- Navigation links will be dynamically loaded here -->
-        </nav>
+        <div id="nav-placeholder"></div>
     </header>
-    <div class="hero">
-        <div class="video-slider">
-            <video id="video1" preload="none" autoplay muted loop>
-                <source src="videos/pb-at-lolrc-demo-only.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <video id="video2" preload="none" autoplay muted loop>
-                <source src="videos/tennis-highlight2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <video id="video3" preload="none" autoplay muted loop>
-                <source src="videos/tennis-highlight3.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <video id="video4" preload="none" autoplay muted loop>
-                <source src="videos/gym-exercises-1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <video id="video5" preload="none" autoplay muted loop>
-                <source src="videos/pure-joy-hitting-the-winner.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <!-- <video id="video6" preload="none" autoplay muted loop>
-                <source src="videos/tennis-highlight6.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <video id="video7" preload="none" autoplay muted loop>
-                <source src="videos/tennis-highlight7.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <video id="video8" preload="none" autoplay muted loop>
-                <source src="videos/tennis-highlight8.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <video id="video9" preload="none" autoplay muted loop>
-                <source src="videos/tennis-highlight9.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <video id="video10" preload="none" autoplay muted loop>
-                <source src="videos/tennis-highlight10.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video><!---->
+    <main>
+        <h2>Learn More About Us!</h2>
+        <div class="carousel">
+            <section class="hero">
+                <div class="video-carousel">
+                    <video class="carousel-video" controls>
+                        <source src="videos/lolrc-pb-promo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <video class="carousel-video" controls>
+                        <source src="videos/tennis-highlight2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <video class="carousel-video" controls>
+                        <source src="videos/tennis-soccer.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <video class="carousel-video" controls>
+                        <source src="videos/pure-joy-hitting-the-winner.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <button class="scroll-button left" onclick="scrollVideoCarousel(-1)">&#10094;</button>
+                <button class="scroll-button right" onclick="scrollVideoCarousel(1)">&#10095;</button>
+            </section>
+
+            <style>
+                .hero {
+                    position: relative;
+                    padding: 20px;
+                    background-color: #000;
+                    color: #fff;
+                    text-align: center;
+                }
+                .video-carousel {
+                    display: flex;
+                    overflow-x: auto;
+                    gap: 20px;
+                    padding: 10px 0;
+                    scrollbar-width: none;
+                }
+                .video-carousel::-webkit-scrollbar {
+                    display: none;
+                }
+                .carousel-video {
+                    width: 300px;
+                    height: 200px;
+                    border-radius: 10px;
+                    margin: 0 10px;
+                }
+            </style>
+
+            <script>
+                function scrollVideoCarousel(direction) {
+                    const videoCarousel = document.querySelector('.video-carousel');
+                    const scrollAmount = 300; // Adjust scroll amount as needed
+                    videoCarousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+                }
+            </script>
+            <div class="carousel-item">
+                <a href="testimonials.html">
+                    <img src="images/navigation/testimonials.png" alt="Testimonials">
+                    <span><strong>Testimonials</strong></span>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="high-performance-tennis-training.html">
+                    <img src="images/navigation/high-performance-tennis-training.png" alt="High-Performance Tennis Training">
+                    <span><strong>High-Performance Tennis Training</strong></span>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="international-juniors-tennis-program.html">
+                    <img src="images/navigation/international-juniors-tennis-program.png" alt="International Juniors Tennis Program">
+                    <span><strong>International Juniors Tennis Program</strong></span>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="group-lessons.html">
+                    <img src="images/navigation/group-lessons.png" alt="Group Lessons">
+                    <span><strong>Group Lessons</strong></span>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="hiit-tennis-classes.html">
+                    <img src="images/navigation/hiit-tennis-classes.png" alt="HIIT Tennis Classes">
+                    <span><strong>HIIT Tennis Classes</strong></span>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="facilities-showcase.html">
+                    <img src="images/navigation/facilities-showcase.png" alt="Facilities Showcase">
+                    <span><strong>Facilities Showcase</strong></span>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="meet-your-coach.html">
+                    <img src="images/navigation/gdm-bandw.png" alt="Meet Your Coach">
+                    <span><strong>Meet Your Coach</strong></span>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="events-and-tournaments-pickleball.html">
+                    <img src="images/navigation/events-and-tournaments-pickleball.png" alt="Events and Tournaments - Pickleball">
+                    <span><strong>Events and Tournaments - Pickleball</strong></span>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="events-and-tournaments-tennis.html">
+                    <img src="images/navigation/events-and-tournaments-tennis.png" alt="Events and Tournaments - Tennis">
+                    <span><strong>Events and Tournaments - Tennis</strong></span>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="scholarship-opportunities.html">
+                    <img src="images/navigation/scholarship-opportunities.png" alt="Scholarship Opportunities">
+                    <span><strong>Scholarship Opportunities</strong></span>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="vlog-section.html">
+                    <img src="images/navigation/vlog-section.png" alt="Vlog Section">
+                    <span><strong>Vlog Section</strong></span>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="swingers-socials.html">
+                    <img src="images/navigation/swingers-socials.png" alt="Swingers Socials">
+                    <span><strong>Swingers Socials</strong></span>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="training-locations.html">
+                    <img src="images/navigation/training-locations.png" alt="Training Locations">
+                    <span><strong>Training Locations</strong></span>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="embracing-ai.html">
+                    <img src="images/navigation/embracing-ai.png" alt="Embracing AI">
+                    <span><strong>Embracing AI</strong></span>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="other-services.html">
+                    <img src="images/navigation/other-services.png" alt="Other Services">
+                    <span><strong>Other Services</strong></span>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="remote-learning-opportunities.html">
+                    <img src="images/navigation/remote-learning-opportunities.png" alt="Remote Learning Opportunities">
+                    <span><strong>Remote Learning Opportunities</strong></span>
+                </a>
+            </div>
         </div>
-        <div class="hero-content">
-            <!-- <img src="images/background.png" alt="Let's Move!" style="width:50%; position:relative; top:2.8in"> -->
-            <a href="quiz.html" style="background-color:red; position:relative; top:3in; font-weight:700">What is the best path for me? Take the quiz now to find out!</a>
-        </div>
-    </div>
-    <div class="tile-container">
-        <div class="tile">
-            <div class="image"></div>
-            <div class="label">Testimonials</div>
-            <a href="testimonials.html" class="button">&#10095;</a>
-        </div>
-        <div class="tile">
-            <div class="image"></div>
-            <div class="label">High-Performance Tennis Training</div>
-            <a href="high-performance-tennis-training.html" class="button">&#10095;</a>
-        </div>
-        <div class="tile">
-            <div class="image"></div>
-            <div class="label">International Juniors Tennis Program</div>
-            <a href="international-juniors-tennis-program.html" class="button">&#10095;</a>
-        </div>
-        <div class="tile">
-            <div class="image"></div>
-            <div class="label">Group Lessons</div>
-            <a href="group-lessons.html" class="button">&#10095;</a>
-        </div>
-        <div class="tile">
-            <div class="image"></div>
-            <div class="label">HIIT Tennis Classes</div>
-            <a href="hiit-tennis-classes.html" class="button">&#10095;</a>
-        </div>
-        <div class="tile">
-            <div class="image"></div>
-            <div class="label">Facilities Showcase</div>
-            <a href="facilities-showcase.html" class="button">&#10095;</a>
-        </div>
-        <div class="tile">
-            <div class="image"></div>
-            <div class="label">Meet Your Coach</div>
-            <a href="about.html" class="button">&#10095;</a>
-        </div>
-        <div class="tile">
-            <div class="image"></div>
-            <div class="label">Events and Tournaments - Pickleball</div>
-            <a href="events-and-tournaments-pickleball.html" class="button">&#10095;</a>
-        </div>
-        <div class="tile">
-            <div class="image"></div>
-            <div class="label">Events and Tournaments - Tennis</div>
-            <a href="events-and-tournaments-tennis.html" class="button">&#10095;</a>
-        </div>
-        <div class="tile">
-            <div class="image"></div>
-            <div class="label">Scholarship Opportunities</div>
-            <a href="scholarship-opportunities.html" class="button">&#10095;</a>
-        </div>
-        <div class="tile">
-            <div class="image"></div>
-            <div class="label">Vlog Section</div>
-            <a href="vlog.html" class="button">&#10095;</a>
-        </div>
-        <div class="tile">
-            <div class="image"></div>
-            <div class="label">Swingers Socials</div>
-            <a href="swingers-socials.html" class="button">&#10095;</a>
-        </div>
-        <div class="tile">
-            <div class="image"></div>
-            <div class="label">Training Locations</div>
-            <a href="training-locations.html" class="button">&#10095;</a>
-        </div>
-        <div class="tile">
-            <div class="image"></div>
-            <div class="label">Embracing AI</div>
-            <a href="embracing-ai.html" class="button">&#10095;</a>
-        </div>
-        <div class="tile">
-            <div class="image"></div>
-            <div class="label">Other Services</div>
-            <a href="other-services.html" class="button">&#10095;</a>
-        </div>
-        <div class="tile">
-            <div class="image"></div>
-            <div class="label">Remote Learning Opportunities</div>
-            <a href="remote-learning-opportunities.html" class="button">&#10095;</a>
-        </div>
-    </div>
+        <button class="scroll-button left" onclick="scrollCarousel(-1)">&#10094;</button>
+        <button class="scroll-button right" onclick="scrollCarousel(1)">&#10095;</button>
+        
+        <style>
+            .scroll-button {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: rgba(228, 17, 17, 0.5);
+                color: white;
+                border: none;
+                padding: 10px;
+                cursor: pointer;
+                z-index: 1;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                transition: background-color 0.3s;
+            }
+            .scroll-button.left {
+                left: 10px;
+            }
+            .scroll-button.right {
+                right: 10px;
+            }
+            .scroll-button:hover {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+        </style>
+
+        <script>
+            function scrollCarousel(direction) {
+                const carousel = document.querySelector('.carousel');
+                const scrollAmount = 200; // Adjust scroll amount as needed
+                carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+            }
+        </script>
+    </main>
     <script>
         function loadNav() {
-            fetch("nav.html")
+            fetch("/nav.html")
             .then(response => response.text())
             .then(data => {
                 document.getElementById("nav-placeholder").innerHTML = data;
-            });
+            })
+            .catch(error => console.error("Error loading navigation:", error));
         }
         loadNav(); // Load navigation dynamically
-    
+        
         function toggleMenu() {
             document.querySelector('.nav-links').classList.toggle('show');
         }
     </script>
-    <footer class="footer">
-        <p><strong>&copy; 2025 Martin Tennis Academy. All rights reserved.</strong></p>
-        <p><strong>Follow Us on Social Media:</strong></p>
-        <div class="social-icons">
-            <a href="https://www.facebook.com/profile.php?id=61569052616812" target="_blank">
-                <img src="images/navigation/facebook.png" alt="Facebook" style="width:48px; height:48px">
-            </a>
-            <a href="#" target="_blank">
-                <img src="images/navigation/instagram.jpeg" alt="Instagram" style="width:48px; height:48px">
-            </a>
-            <a href="#" target="_blank">
-                <img src="images/navigation/youtube.jpeg" alt="YouTube" style="width:48px; height:48px">
-            </a>
-            <a href="#" target="_blank">
-                <img src="images/navigation/tiktok.jpeg" alt="TikTok" style="width:48px; height:48px">
-            </a>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const slider = document.querySelector(".video-slider");
-            const videos = slider.querySelectorAll("video");
-            const durations = [31000, 15000, 11000, 32000, 10000, 4500, 5500, 5000, 5000, 5000];
-            let currentIndex = 0;
-            setTimeout(function slide() {
-                currentIndex = (currentIndex + 1) % videos.length;
-                slider.style.transform = `translateX(-${100 * currentIndex}%)`;
-                setTimeout(slide, durations[currentIndex]);
-            }, durations[currentIndex]);
-        });
+        function loadFooter() {
+            fetch("/footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            })
+            .catch(error => console.error("Error loading footer:", error));
+        }
+        loadFooter();
     </script>
 </body>
 </html>

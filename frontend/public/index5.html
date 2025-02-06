@@ -103,6 +103,33 @@
         .carousel-item:nth-child(7) img {
             border-color: pink;
         }
+        .carousel-item:nth-child(8) img {
+            border-color: cyan;
+        }
+        .carousel-item:nth-child(9) img {
+            border-color: red;
+        }
+        .carousel-item:nth-child(10) img {
+            border-color: blue;
+        }
+        .carousel-item:nth-child(11) img {
+            border-color: green;
+        }
+        .carousel-item:nth-child(12) img {
+            border-color: orange;
+        }
+        .carousel-item:nth-child(13) img {
+            border-color: purple;
+        }
+        .carousel-item:nth-child(14) img {
+            border-color: yellow;
+        }
+        .carousel-item:nth-child(15) img {
+            border-color: pink;
+        }
+        .carousel-item:nth-child(16) img {
+            border-color: cyan;
+        }
         footer {
             background-color: #000;
             color: #fff;
@@ -119,63 +146,227 @@
     <main>
         <h2>Learn More About Us!</h2>
         <div class="carousel">
+            <section class="hero">
+                <div class="video-carousel">
+                    <video class="carousel-video" controls>
+                        <source src="videos/lolrc-pb-promo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <video class="carousel-video" controls>
+                        <source src="videos/tennis-highlight2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <video class="carousel-video" controls>
+                        <source src="videos/tennis-soccer.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <video class="carousel-video" controls>
+                        <source src="videos/pure-joy-hitting-the-winner.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <button class="scroll-button left" onclick="scrollVideoCarousel(-1)">&#10094;</button>
+                <button class="scroll-button right" onclick="scrollVideoCarousel(1)">&#10095;</button>
+            </section>
+
+            <style>
+                .hero {
+                    position: relative;
+                    padding: 20px;
+                    background-color: #000;
+                    color: #fff;
+                    text-align: center;
+                }
+                .video-carousel {
+                    display: flex;
+                    overflow-x: auto;
+                    gap: 20px;
+                    padding: 10px 0;
+                    scrollbar-width: none;
+                }
+                .video-carousel::-webkit-scrollbar {
+                    display: none;
+                }
+                .carousel-video {
+                    width: 300px;
+                    height: 200px;
+                    border-radius: 10px;
+                    margin: 0 10px;
+                }
+            </style>
+
+            <script>
+                function scrollVideoCarousel(direction) {
+                    const videoCarousel = document.querySelector('.video-carousel');
+                    const scrollAmount = 300; // Adjust scroll amount as needed
+                    videoCarousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+                }
+            </script>
             <div class="carousel-item">
-                <img src="images/pb-training-francais.png" alt="Pickleball Training in France!">
-                <span><strong>Pickleball Training in France!</strong></span>
+                <a href="testimonials.html">
+                    <img src="images/navigation/testimonials.png" alt="Testimonials">
+                    <span><strong>Testimonials</strong></span>
+                </a>
             </div>
             <div class="carousel-item">
-                <img src="images/tennis-soccer.png" alt="Tennis Soccer!">
-                <span><strong>Tennis Soccer!</strong></span>
+                <a href="high-performance-tennis-training.html">
+                    <img src="images/navigation/high-performance-tennis-training.png" alt="High-Performance Tennis Training">
+                    <span><strong>High-Performance Tennis Training</strong></span>
+                </a>
             </div>
             <div class="carousel-item">
-                <img src="images/gym-exercises-1.png" alt="Gym Exercises for Tennis & Pickleball Players">
-                <span><strong>Gym Exercises for Tennis & Pickleball Players</strong></span>
+                <a href="international-juniors-tennis-program.html">
+                    <img src="images/navigation/international-juniors-tennis-program.png" alt="International Juniors Tennis Program">
+                    <span><strong>International Juniors Tennis Program</strong></span>
+                </a>
             </div>
             <div class="carousel-item">
-                <img src="images/pb-at-lolrc.png" alt="Pickleball at Land O' Lakes Recreation Complex!">
-                <span><strong>Pickleball at Land O' Lakes Recreation Complex!</strong></span>
+                <a href="group-lessons.html">
+                    <img src="images/navigation/group-lessons.png" alt="Group Lessons">
+                    <span><strong>Group Lessons</strong></span>
+                </a>
             </div>
             <div class="carousel-item">
-                <img src="images/pure-joy-hitting-the-winner.png" alt="Pure joy hitting the winner!">
-                <span><strong>Pure joy hitting the winner!</strong></span>
+                <a href="hiit-tennis-classes.html">
+                    <img src="images/navigation/hiit-tennis-classes.png" alt="HIIT Tennis Classes">
+                    <span><strong>HIIT Tennis Classes</strong></span>
+                </a>
             </div>
             <div class="carousel-item">
-                <img src="images/you-are-not-a-nice-person.png" alt="You are not a nice person! 😂">
-                <span><strong>You are not a nice person! 😂</strong></span>
+                <a href="facilities-showcase.html">
+                    <img src="images/navigation/facilities-showcase.png" alt="Facilities Showcase">
+                    <span><strong>Facilities Showcase</strong></span>
+                </a>
             </div>
             <div class="carousel-item">
-                <img src="images/rose-colored-translucent-tennis-racket.png" alt="The Future of Tennis Rackets?">
-                <span><strong>The Future of Tennis Rackets?</strong></span>
+                <a href="meet-your-coach.html">
+                    <img src="images/navigation/gdm-bandw.png" alt="Meet Your Coach">
+                    <span><strong>Meet Your Coach</strong></span>
+                </a>
             </div>
+            <div class="carousel-item">
+                <a href="events-and-tournaments-pickleball.html">
+                    <img src="images/navigation/events-and-tournaments-pickleball.png" alt="Events and Tournaments - Pickleball">
+                    <span><strong>Events and Tournaments - Pickleball</strong></span>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="events-and-tournaments-tennis.html">
+                    <img src="images/navigation/events-and-tournaments-tennis.png" alt="Events and Tournaments - Tennis">
+                    <span><strong>Events and Tournaments - Tennis</strong></span>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="scholarship-opportunities.html">
+                    <img src="images/navigation/scholarship-opportunities.png" alt="Scholarship Opportunities">
+                    <span><strong>Scholarship Opportunities</strong></span>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="vlog-section.html">
+                    <img src="images/navigation/vlog-section.png" alt="Vlog Section">
+                    <span><strong>Vlog Section</strong></span>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="swingers-socials.html">
+                    <img src="images/navigation/swingers-socials.png" alt="Swingers Socials">
+                    <span><strong>Swingers Socials</strong></span>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="training-locations.html">
+                    <img src="images/navigation/training-locations.png" alt="Training Locations">
+                    <span><strong>Training Locations</strong></span>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="embracing-ai.html">
+                    <img src="images/navigation/embracing-ai.png" alt="Embracing AI">
+                    <span><strong>Embracing AI</strong></span>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="other-services.html">
+                    <img src="images/navigation/other-services.png" alt="Other Services">
+                    <span><strong>Other Services</strong></span>
+                </a>
+            </div>
+            <div class="carousel-item">
+                <a href="remote-learning-opportunities.html">
+                    <img src="images/navigation/remote-learning-opportunities.png" alt="Remote Learning Opportunities">
+                    <span><strong>Remote Learning Opportunities</strong></span>
+                </a>
             </div>
         </div>
+        <button class="scroll-button left" onclick="scrollCarousel(-1)">&#10094;</button>
+        <button class="scroll-button right" onclick="scrollCarousel(1)">&#10095;</button>
+        
+        <style>
+            .scroll-button {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: rgba(228, 17, 17, 0.5);
+                color: white;
+                border: none;
+                padding: 10px;
+                cursor: pointer;
+                z-index: 1;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                transition: background-color 0.3s;
+            }
+            .scroll-button.left {
+                left: 10px;
+            }
+            .scroll-button.right {
+                right: 10px;
+            }
+            .scroll-button:hover {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+        </style>
+
+        <script>
+            function scrollCarousel(direction) {
+                const carousel = document.querySelector('.carousel');
+                const scrollAmount = 200; // Adjust scroll amount as needed
+                carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+            }
+        </script>
     </main>
     <script>
         function loadNav() {
             fetch("/nav.html")
             .then(response => response.text())
-        .then(data => {
-            document.getElementById("nav-placeholder").innerHTML = data;
-        })
-        .catch(error => console.error("Error loading navigation:", error));
-    }
-    loadNav(); // Load navigation dynamically
-    
+            .then(data => {
+                document.getElementById("nav-placeholder").innerHTML = data;
+            })
+            .catch(error => console.error("Error loading navigation:", error));
+        }
+        loadNav(); // Load navigation dynamically
+        
         function toggleMenu() {
             document.querySelector('.nav-links').classList.toggle('show');
         }
     </script>
     <div id="footer-placeholder"></div>
-<script>
-    function loadFooter() {
-        fetch("/footer.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("footer-placeholder").innerHTML = data;
-        })
-        .catch(error => console.error("Error loading footer:", error));
-    }
-    loadFooter();
-</script>
+    <script>
+        function loadFooter() {
+            fetch("/footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            })
+            .catch(error => console.error("Error loading footer:", error));
+        }
+        loadFooter();
+    </script>
 </body>
 </html>
