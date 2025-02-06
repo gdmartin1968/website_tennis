@@ -144,36 +144,62 @@
             header h1 {
                 font-size: 2em;
             }
+            .carousel {
+                flex-direction: column;
+                padding: 10px 0 10px 10px;
+            }
             .carousel-item {
-                width: 120px;
+                width: 100%;
+                margin: 10px 0;
             }
             .carousel-item img {
                 width: 120px;
                 height: 120px;
             }
-            .carousel {
-                padding: 10px 0 10px 10px;
-            }
-            .carousel-item {
-                margin: 0 5px;
+            .video-carousel {
+                flex-direction: column;
             }
             .carousel-video {
                 width: 100%;
                 height: auto;
+                margin: 10px 0;
             }
             .scroll-button {
                 width: 30px;
                 height: 30px;
             }
         }
+        .quiz-link {
+            background-color: red;
+            display: block;
+            margin-top: 3in;
+            font-weight: 700;
+            text-align: center;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+        .quiz-link:hover {
+            background-color: darkred;
+        }
     </style>
 </head>
 <body>
     <header>
+        <H1>Martin Tennis Academy</H1>
+        <br>
         <div id="nav-placeholder"></div>
     </header>
-    <main>
-        <h2>Learn More About Us!</h2>
+    <main style="display: flex; justify-content: center; align-items: center; height: 15vh; text-align: center;">
+        <div>
+            <h2>Learn More About Us!</h2>
+            <a href="quiz.html" class="quiz-link" style="background-color: rgb(236, 148, 148); margin-top: 10px;">
+                <span style="color: black;">TAKE THE QUIZ NOW</span>
+                <span style="color: white;">to find out the best path for you!</span>
+            </a>
+        </div>
+    </main>
+        <br>
         <div class="carousel" style="display: flex; justify-content: center;"></div>
             <section class="hero">
                 <div class="video-carousel">
@@ -234,110 +260,127 @@
         </div>
         <div class="carousel">
             <div class="carousel-item">
-                <a href="testimonials.html">
-                    <img src="images/navigation/testimonials.png" alt="Testimonials">
-                    <span><strong>Testimonials</strong></span>
-                </a>
+            <a href="testimonials.html"></a>
+                <img src="images/navigation/testimonials.png" alt="Testimonials">
+                <span><strong>Testimonials</strong></span>
+            </a>
             </div>
             <div class="carousel-item">
-                <a href="high-performance-tennis-training.html">
-                    <img src="images/navigation/high-performance-tennis-training.png" alt="High-Performance Tennis Training">
-                    <span><strong>High-Performance Tennis Training</strong></span>
-                </a>
+            <a href="high-performance-tennis-training.html">
+                <img src="images/navigation/high-performance-tennis-training.png" alt="High-Performance Tennis Training">
+                <span><strong>High-Performance Tennis Training</strong></span>
+            </a>
             </div>
             <div class="carousel-item">
-                <a href="international-juniors-tennis-program.html">
-                    <img src="images/navigation/international-juniors-tennis-program.png" alt="International Juniors Tennis Program">
-                    <span><strong>International Juniors Tennis Program</strong></span>
-                </a>
+            <a href="international-juniors-tennis-program.html">
+                <img src="images/navigation/international-juniors-tennis-program.png" alt="International Juniors Tennis Program">
+                <span><strong>International Juniors Tennis Program</strong></span>
+            </a>
             </div>
             <div class="carousel-item">
-                <a href="group-lessons.html">
-                    <img src="images/navigation/group-lessons.png" alt="Group Lessons">
-                    <span><strong>Group Lessons</strong></span>
-                </a>
+            <a href="group-lessons.html"></a>
+                <img src="images/navigation/group-lessons.png" alt="Group Lessons">
+                <span><strong>Group Lessons</strong></span>
+            </a>
             </div>
             <div class="carousel-item">
-                <a href="hiit-tennis-classes.html">
-                    <img src="images/navigation/hiit-tennis-classes.png" alt="HIIT Tennis Classes">
-                    <span><strong>HIIT Tennis Classes</strong></span>
-                </a>
+            <a href="hiit-tennis-classes.html">
+                <img src="images/navigation/hiit-tennis-classes.png" alt="HIIT Tennis Classes">
+                <span><strong>HIIT Tennis Classes</strong></span>
+            </a>
             </div>
             <div class="carousel-item">
-                <a href="facilities-showcase.html">
-                    <img src="images/navigation/facilities-showcase.png" alt="Facilities Showcase">
-                    <span><strong>Facilities Showcase</strong></span>
-                </a>
+            <a href="facilities-showcase.html">
+                <img src="images/navigation/facilities-showcase.png" alt="Facilities Showcase">
+                <span><strong>Facilities Showcase</strong></span>
+            </a>
             </div>
             <div class="carousel-item">
-                <a href="meet-your-coach.html">
-                    <img src="images/navigation/gdm-bandw.png" alt="Meet Your Coach">
-                    <span><strong>Meet Your Coach</strong></span>
-                </a>
+            <a href="meet-your-coach.html">
+                <img src="images/navigation/gdm-bandw.png" alt="Meet Your Coach">
+                <span><strong>Meet Your Coach</strong></span>
+            </a>
             </div>
             <div class="carousel-item">
-                <a href="events-and-tournaments-pickleball.html">
-                    <img src="images/navigation/events-and-tournaments-pickleball.png" alt="Events and Tournaments - Pickleball">
-                    <span><strong>Events and Tournaments - Pickleball</strong></span>
-                </a>
+            <a href="events-and-tournaments-pickleball.html"></a>
+                <img src="images/navigation/events-and-tournaments-pickleball.png" alt="Events and Tournaments - Pickleball">
+                <span><strong>Events and Tournaments - Pickleball</strong></span>
+            </a>
             </div>
             <div class="carousel-item">
-                <a href="events-and-tournaments-tennis.html">
-                    <img src="images/navigation/events-and-tournaments-tennis.png" alt="Events and Tournaments - Tennis">
-                    <span><strong>Events and Tournaments - Tennis</strong></span>
-                </a>
+            <a href="events-and-tournaments-tennis.html">
+                <img src="images/navigation/events-and-tournaments-tennis.png" alt="Events and Tournaments - Tennis">
+                <span><strong>Events and Tournaments - Tennis</strong></span>
+            </a>
             </div>
             <div class="carousel-item">
-                <a href="scholarship-opportunities.html">
-                    <img src="images/navigation/scholarship-opportunities.png" alt="Scholarship Opportunities">
-                    <span><strong>Scholarship Opportunities</strong></span>
-                </a>
+            <a href="scholarship-opportunities.html"></a>
+                <img src="images/navigation/scholarship-opportunities.png" alt="Scholarship Opportunities">
+                <span><strong>Scholarship Opportunities</strong></span>
+            </a>
             </div>
             <div class="carousel-item">
-                <a href="vlog-section.html">
-                    <img src="images/navigation/vlog-section.png" alt="Vlog Section">
-                    <span><strong>Vlog Section</strong></span>
-                </a>
+            <a href="vlog-section.html">
+                <img src="images/navigation/vlog-section.png" alt="Vlog Section">
+                <span><strong>Vlog Section</strong></span>
+            </a>
             </div>
             <div class="carousel-item">
-                <a href="swingers-socials.html">
-                    <img src="images/navigation/swingers-socials.png" alt="Swingers Socials">
-                    <span><strong>Swingers Socials</strong></span>
-                </a>
+            <a href="swingers-socials.html"></a>
+                <img src="images/navigation/swingers-socials.png" alt="Swingers Socials">
+                <span><strong>Swingers Socials</strong></span>
+            </a>
             </div>
             <div class="carousel-item">
-                <a href="training-locations.html">
-                    <img src="images/navigation/training-locations.png" alt="Training Locations">
-                    <span><strong>Training Locations</strong></span>
-                </a>
+            <a href="training-locations.html"></a>
+                <img src="images/navigation/training-locations.png" alt="Training Locations">
+                <span><strong>Training Locations</strong></span>
+            </a>
             </div>
             <div class="carousel-item">
-                <a href="embracing-ai.html">
-                    <img src="images/navigation/embracing-ai.png" alt="Embracing AI">
-                    <span><strong>Embracing AI</strong></span>
-                </a>
+            <a href="embracing-ai.html">
+                <img src="images/navigation/embracing-ai.png" alt="Embracing AI">
+                <span><strong>Embracing AI</strong></span>
+            </a>
             </div>
             <div class="carousel-item">
-                <a href="other-services.html">
-                    <img src="images/navigation/other-services.png" alt="Other Services">
-                    <span><strong>Other Services</strong></span>
-                </a>
+            <a href="other-services.html"></a>
+                <img src="images/navigation/other-services.png" alt="Other Services">
+                <span><strong>Other Services</strong></span>
+            </a>
             </div>
             <div class="carousel-item">
-                <a href="remote-learning-opportunities.html">
-                    <img src="images/navigation/remote-learning-opportunities.png" alt="Remote Learning Opportunities">
-                    <span><strong>Remote Learning Opportunities</strong></span>
-                </a>
+            <a href="remote-learning-opportunities.html">
+                <img src="images/navigation/remote-learning-opportunities.png" alt="Remote Learning Opportunities">
+                <span><strong>Remote Learning Opportunities</strong></span>
+            </a>
             </div>
         </div>
-        <button class="scroll-button left" onclick="scrollCarousel(-1)">&#10094;</button>
-        <button class="scroll-button right" onclick="scrollCarousel(1)">&#10095;</button>
+        <style>
+            .carousel-item {
+            width: 80px; /* Adjust width to half */
+            }
+            .carousel-item img {
+            width: 80px; /* Adjust width to half */
+            height: 80px; /* Adjust height to half */
+            }
+        </style>
+        </div>
+        <div class="carousel-container">
+            <button class="scroll-button left" onclick="scrollCarousel(-1)">&#10094;</button>
+            <div class="carousel">
+                <!-- Carousel items here -->
+            </div>
+            <button class="scroll-button right" onclick="scrollCarousel(1)">&#10095;</button>
+        </div>
         
         <style>
+            .carousel-container {
+                position: relative;
+                display: flex;
+                align-items: center;
+            }
             .scroll-button {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
                 background-color: rgba(228, 17, 17, 0.5);
                 color: white;
                 border: none;
@@ -354,10 +397,10 @@
                 transition: background-color 0.3s;
             }
             .scroll-button.left {
-                left: 10px;
+                margin-right: 10px;
             }
             .scroll-button.right {
-                right: 10px;
+                margin-left: 10px;
             }
             .scroll-button:hover {
                 background-color: rgba(0, 0, 0, 0.7);
@@ -366,7 +409,7 @@
 
         <script>
             function scrollCarousel(direction) {
-                const carousel = document.querySelector('.carousel');
+                const carousel = document.querySelector('.carousel-container .carousel');
                 const scrollAmount = 200; // Adjust scroll amount as needed
                 carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
             }
