@@ -80,6 +80,21 @@
             text-decoration: none;
             font-size: 1.5em;
         }
+        .responsive-img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            float: left;
+            margin-right: 20px;
+        }
+        @media (max-width: 768px) {
+            .responsive-img {
+                width: 100%;
+                max-width: none;
+                float: none;
+                margin: 0 auto;
+            }
+        }
     </style>
 </head>
 <body>
@@ -100,7 +115,7 @@
             }
             }
         </style>
-    </header>
+        <img src="images/meet-the-head-coach.png" alt="Meet the Head Coach" class="responsive-img">
     
         <h2>About Us</h2>
         <p class="intro">Welcome to Martin Tennis Academy, where passion for the game meets excellence in training.</p>
