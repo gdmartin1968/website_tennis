@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head></form>
+<head>
+    <link rel="icon" href="images/mta-logo.png" type="image/png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Registration Form - Martin Tennis Academy</title>
@@ -159,30 +160,30 @@
     <script>
         document.getElementById("registrationForm").addEventListener("submit", async function(event) {
             event.preventDefault();
-        
+
             const formData = new FormData(this);
             const jsonData = Object.fromEntries(formData.entries());
-        
+
             try {
-                const response = await fetch("/api/schedule", {
+                const response = await fetch("http://localhost:5000/register", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(jsonData)
                 });
-        
+
                 if (!response.ok) {
                     throw new Error("Failed to submit form");
                 }
-        
+
                 const data = await response.json();
-                alert("Thank you for registering! We will contact you shortly.");
-                this.reset();
+                alert("Thank you for registering! We will contact you shortly."); // Show confirmation popup
+                this.reset(); // Reset the form after successful submission
             } catch (error) {
                 console.error("Error submitting form:", error);
                 alert("Submission failed. Please try again.");
             }
-        });
-        </script>
+        }, { once: true });
+    </script>
         <script>
         function loadNav() {
             fetch("nav.html")
