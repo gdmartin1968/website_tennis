@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="icon" href="images/mta-logo.png" type="image/png">
+<head></form>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Registration Form - Martin Tennis Academy</title>
@@ -112,7 +111,7 @@
             <h2>Online Registration Form</h2>
             <p>Please fill out the form below to register for our tennis and pickleball lessons and services.</p>
             
-            <form id="scheduleForm" action="/api/schedule" method="POST">
+            <form action="/api/schedule" method="POST" id="registrationForm">
                 <label for="fullName">Full Name:</label>
                 <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
 
@@ -128,11 +127,11 @@
                     <option value="Individual - Single Lesson">Individual Lesson (50 mins) - $60</option>
                     <option value="Individual - 5 Pack">5-Pack, Ind or Grp Lessons (250 mins) - $180</option>
                     <option value="Individual - 10 Lessons">5-Week, 10 Lessons Ind or Grp (500 mins) - $350</option>
-                    <option value="Group - 2 Players">Per Individual for 2 players (50 mins) - $30 each</option>
-                    <option value="Group - 3 Players">Per Individual for 3 players (50 mins) - $22 each</option>
-                    <option value="Group - 4 Players">Per Individual for 4 players (50 mins) - $18 each</option>
-                    <option value="Group - 5-8 Players">Per Individual for 5 - 8 players (60 - 80 mins) - $15 each</option>
-                    <option value="Group - 9+ Players">Per Individual for 9+ players (60 - 80 mins) – TBD, up to $12 per person</option>
+                    <option value="Group - 2 Players">Per Individual for 2 players (50 mins) - $25 each</option>
+                    <option value="Group - 3 Players">Per Individual for 3 players (50 mins) - $18 each</option>
+                    <option value="Group - 4 Players">Per Individual for 4 players (50 mins) - $15 each</option>
+                    <option value="Group - 5-8 Players">Per Individual for 5 - 8 players (60 - 80 mins) - $12 each</option>
+                    <option value="Group - 9+ Players">Per Individual for 9+ players (60 - 80 mins) – TBD</option>
                     <option value="High Performance - Private">High Performance Training - Private Lessons ($50-$100/hr)</option>
                     <option value="High Performance - Group">High Performance Training - Group Sessions ($20-$50/session)</option>
                     <option value="High Performance - Comprehensive">High Performance Training - Comprehensive Program ($1500-$3500/month)</option>
@@ -160,30 +159,30 @@
     <script>
         document.getElementById("registrationForm").addEventListener("submit", async function(event) {
             event.preventDefault();
-
+        
             const formData = new FormData(this);
             const jsonData = Object.fromEntries(formData.entries());
-
+        
             try {
-                const response = await fetch("http://localhost:5000/register", {
+                const response = await fetch("/api/schedule", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(jsonData)
                 });
-
+        
                 if (!response.ok) {
                     throw new Error("Failed to submit form");
                 }
-
+        
                 const data = await response.json();
-                alert("Thank you for registering! We will contact you shortly."); // Show confirmation popup
-                this.reset(); // Reset the form after successful submission
+                alert("Thank you for registering! We will contact you shortly.");
+                this.reset();
             } catch (error) {
                 console.error("Error submitting form:", error);
                 alert("Submission failed. Please try again.");
             }
-        }, { once: true });
-    </script>
+        });
+        </script>
         <script>
         function loadNav() {
             fetch("nav.html")
