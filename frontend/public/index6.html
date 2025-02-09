@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Martin Tennis Academy Homepage</title>
+        <style>
+            body {
+                font-family: Helvetica, Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f5f5f5;
+                color: #333;
+            }
+            header {
+                background-color: #000;
+                color: #fff;
+                padding: 20px 10%;
+                text-align: center;
+            }
+            header h1 {
+                margin: 0;
+                font-size: 2.5em;
+            }
+            h2 {
+                color: #ff008c;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            nav {
+                background-color: #333;
+                color: #fff;
+                padding: 10px;
+                text-align: center;
+            }
+            nav a {
+                color: #fff;
+                text-decoration: none;
+                margin: 0 15px;
+                display: inline-block; /* Ensure links are fully visible */
+                white-space: nowrap; /* Prevent text from wrapping */
+            }
+            nav a:hover {
+                text-decoration: underline;
+            }
+            article {
+                margin-bottom: 20px;
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 10px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+            article h3 {
+                margin-top: 0;
+                color: #ffa500;
+            }
+            article p {
+                line-height: 1.6;
+            }
+            .carousel {
+                display: flex;
+                overflow-x: auto;
+                gap: 20px;
+                padding: 10px 0 10px 30px; /* Add padding to the left */
+                scrollbar-width: none; /* Hide scrollbar for Firefox */
+            }
+            .carousel::-webkit-scrollbar {
+                display: none; /* Hide scrollbar for Chrome, Safari, and Edge */
+            }
+            .carousel-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 160px; /* Adjust width to match image width */
+                text-align: center;
+                color: #333;
+                margin: 0 10px; /* Adjust margin for even spacing */
+            }
+            .carousel-item img {
+                width: 160px;
+                height: 160px;
+                border-radius: 50%;
+                margin-bottom: 5px;
+                object-fit: cover;
+                border: 3px solid transparent; /* Default border for styling */
+            }
+            .carousel-item:nth-child(1) img {
+                border-color: red;
+            }
+            .carousel-item:nth-child(2) img {
+                border-color: blue;
+            }
+            .carousel-item:nth-child(3) img {
+                border-color: green;
+            }
+            .carousel-item:nth-child(4) img {
+                border-color: orange;
+            }
+            .carousel-item:nth-child(5) img {
+                border-color: purple;
+            }
+            .carousel-item:nth-child(6) img {
+                border-color: yellow;
+            }
+            .carousel-item:nth-child(7) img {
+                border-color: pink;
+            }
+            .carousel-item:nth-child(8) img {
+                border-color: cyan;
+            }
+            .carousel-item:nth-child(9) img {
+                border-color: red;
+            }
+            .carousel-item:nth-child(10) img {
+                border-color: blue;
+            }
+            .carousel-item:nth-child(11) img {
+                border-color: green;
+            }
+            .carousel-item:nth-child(12) img {
+                border-color: orange;
+            }
+            .carousel-item:nth-child(13) img {
+                border-color: purple;
+            }
+            .carousel-item:nth-child(14) img {
+                border-color: yellow;
+            }
+            .carousel-item:nth-child(15) img {
+                border-color: pink;
+            }
+            .carousel-item:nth-child(16) img {
+                border-color: cyan;
+            }
+            footer {
+                background-color: #000;
+                color: #fff;
+                text-align: center;
+                padding: 10px 0;
+                margin-top: 20px;
+            }
+            @media (max-width: 768px) {
+                header {
+                    padding: 10px 5%;
+                }
+                header h1 {
+                    font-size: 2em;
+                }
+                .carousel {
+                    flex-direction: column;
+                    padding: 10px 0 10px 10px;
+                    align-items: center; /* Center items horizontally */
+                }
+                .carousel-item {
+                    width: 100%;
+                    margin: 10px 0;
+                }
+                .carousel-item img {
+                    width: 120px;
+                    height: 120px;
+                }
+                .video-carousel {
+                    flex-direction: column;
+                }
+                .carousel-video {
+                    width: 100%;
+                    height: auto;
+                    margin: 10px 0;
+                }
+                .scroll-button {
+                    width: 30px;
+                    height: 30px;
+                }
+                .scroll-button.left, .scroll-button.right {
+                    position: static;
+                    margin: 10px auto;
+                }
+            }
+            .quiz-link {
+                background-color: red;
+                display: block;
+                margin-top: 3in;
+                font-weight: 700;
+                text-align: center;
+                color: white;
+                padding: 10px;
+                text-decoration: none;
+            }
+            .quiz-link:hover {
+                background-color: darkred;
+            }
+            .hero {
+                position: relative;
+                padding: 20px;
+                background-color: #000;
+                color: #fff;
+                text-align: center;
+            }
+            .video-carousel {
+                display: flex;
+                overflow-x: auto;
+                gap: 20px;
+                padding: 10px 0;
+                scrollbar-width: none;
+            }
+            .video-carousel::-webkit-scrollbar {
+                display: none;
+            }
+            .carousel-video {
+                width: 300px;
+                height: 200px;
+                border-radius: 10px;
+                margin: 0 10px;
+            }
+            .carousel-container {
+                position: relative;
+                display: flex;
+                align-items: center;
+            }
+            .scroll-button {
+                background-color: rgba(228, 17, 17, 0.5);
+                color: white;
+                border: none;
+                padding: 10px;
+                cursor: pointer;
+                z-index: 1;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                transition: background-color 0.3s;
+            }
+            .scroll-button.left {
+                margin-right: 10px;
+            }
+            .scroll-button.right {
+                margin-left: 10px;
+            }
+            .scroll-button:hover {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+        </style>
+    </head>
+<body>
+    <header style="display: flex; flex-direction: column; align-items: center;">
+        <h1>Martin Tennis Academy</h1>
+        <div id="nav-placeholder"></div>
+    </header>
+    <section class="features">
+        <div class="feature">
+            <a href="testimonials.html" style="display: block; margin-bottom: 10px;"><img src="images/navigation/testimonials.png" alt="Testimonials"></a>
+            <h3>Testimonials</h3>
+        </div>
+        <div class="feature">
+            <a href="high-performance-tennis-training.html"><img src="images/navigation/high-performance-tennis-training.png" alt="High-Performance Tennis Training"></a>
+            <h3>High-Performance Training</h3>
+        </div>
+        <div class="feature">
+            <a href="group-lessons.html"><img src="images/navigation/group-lessons.png" alt="Group Lessons"></a>
+            <h3>Group Lessons</h3>
+        </div>
+        <div class="feature">
+            <a href="facilities-showcase.html"><img src="images/navigation/facilities-showcase.png" alt="Facilities Showcase"></a>
+            <h3>Facilities Showcase</h3>
+        </div>
+    </section>
+    <script>
+        function loadNav() {
+            fetch("/nav.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("nav-placeholder").innerHTML = data;
+            })
+            .catch(error => console.error("Error loading navigation:", error));
+        }
+        loadNav(); // Load navigation dynamically
+        
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('show');
+        }
+    </script>
+    <div id="footer-placeholder"></div>
+    <script>
+        function loadFooter() {
+            fetch("/footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            })
+            .catch(error => console.error("Error loading footer:", error));
+        }
+        loadFooter();
+    </script>
+</body>
+</html>
