@@ -53,17 +53,22 @@
         @media (max-width: 768px) {
             .nav-links {
                 flex-direction: column;
-                position: absolute;
-                top: 60px;
+                position: fixed;
+                top: 0;
                 left: 0;
                 width: 100%;
                 background-color: #000;
                 text-align: center;
-                padding: 20px 0; /* Doubled padding for mobile devices */
-                margin-top: 2in; /* Doubled margin-top for mobile devices */
+                padding: 20px 0;
+                margin-top: 0;
+                display: none;
+                z-index: 1000;
+            }
+            .nav-links.show {
+                display: flex;
             }
             .menu-icon {
-                display: none;
+                display: block;
             }
         }
     </style>
@@ -72,7 +77,7 @@
 
 <header class="navbar">
     <span class="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></span>
-    <nav class="nav-links show">
+    <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="services.html">Services & Pricing</a>
