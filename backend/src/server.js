@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000;
 
 // ✅ Enable CORS to allow frontend requests
 const corsOptions = {
-    origin: ["http://localhost:3000", "https://www.martintennisacademy.com"],
+    origin: ["http://localhost:3000", "https://martintennisacademy.herokuapp.com", "https://www.martintennisacademy.com"],
     methods: "GET,POST",
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true
